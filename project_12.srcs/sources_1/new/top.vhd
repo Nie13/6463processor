@@ -52,6 +52,7 @@ signal SrcB: std_logic_vector (31 downto 0);
 signal WriteData: std_logic_vector (31 downto 0);
 signal PCPlus4: std_logic_vector(31 downto 0);
 signal PCBranch: std_logic_vector (31 downto 0);
+signal PCSrc: std_logic;
 
 
 
@@ -80,9 +81,24 @@ port(
 );
 end component;
 
+component IM
+port(
+   PCBranch: in std_logic_vector (31 downto 0);
+   PCPlus4: out std_logic_vector (31 downto 0);
+   Instr: out std_logic_vector (31 downto 0);
+   CLK: in std_logic; 
+   PCSrc: in std_logic
+);
+end component;
+
+
 begin
 decode: Decoder port map(opcode=>instr(31 downto 26), funct => instr(5 downto 0), MemtoReg => MemtoReg, MemWrite => MemWrite, branch => branch, ALUop => ALUop, ALUSrc => ALUSrc, RegDst => RegDst, RegWrite => RegWrite, JMP=>JMP);
+
 registerfi: registerfile port map(CLK=>clk, Instr=> instr,WD3=>Result, SrcA=>SrcA, SrcB=> SrcB, WriteData=>WriteData, RegWrite=>RegWrite, RegDst=>RegDst, ALUSrc=>ALUSrc, PCPlus4=>PCPlus4, PCBranch=>PCBranch );
+
+instrmemory: IM port map(CLK => clk, PCPlus4=>PCPlus4,Instr=>instr, PCSrc=>PCSrc,PCBranch=>PCBranch);
+
 
 
 end Behavioral;
