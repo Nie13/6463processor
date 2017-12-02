@@ -1,0 +1,82 @@
+/*
+
+Vivado v2017.2 (64-bit)
+SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+
+Process ID: 14112
+License: Customer
+
+Current time: 	12/2/17 2:56:04 PM EST
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 8.1
+OS Version: 6.3
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 15 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	D:/Vivado/2017.2/tps/win64/jre
+JVM executable location: 	D:/Vivado/2017.2/tps/win64/jre/bin/java.exe
+Java library paths: D:/Vivado/2017.2/bin/unwrapped/win64.o;C:/Windows/Sun/Java/bin;C:/Windows/system32;C:/Windows;D:/Vivado/2017.2/bin;D:/Vivado/2017.2/lib/win64.o;D:/Vivado/2017.2/tps/win64/jre/bin/server;D:/Vivado/2017.2/tps/win64/jre/bin;D:/Vivado/2017.2/ids_lite/ISE/bin/nt64;D:/Vivado/2017.2/ids_lite/ISE/lib/nt64;D:/Vivado_HLS/2017.2/bin;C:/Windows/system32;C:/Windows;C:/Windows/System32/Wbem;C:/Windows/System32/WindowsPowerShell/v1.0/;C:/Program Files/Lenovo/Bluetooth Software/;C:/Program Files/Lenovo/Bluetooth Software/syswow64;C:/Program Files (x86)/Intel/OpenCL SDK/2.0/bin/x86;C:/Program Files (x86)/Intel/OpenCL SDK/2.0/bin/x64;C:/Program Files/Microsoft SQL Server/110/Tools/Binn/;C:/Program Files/Microsoft/Web Platform Installer/;C:/Program Files (x86)/Microsoft ASP.NET/ASP.NET Web Pages/v1.0/;C:/Program Files (x86)/Windows Kits/8.0/Windows Performance Toolkit/;D:/Program Files/PuTTY/;D:/Program Files (x86)/Git/cmd;d:/program files (x86)/win32pe_edu;.;;D:/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/bin;D:/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/libexec/gcc/x86_64-w64-mingw32/6.2.0;.;;.
+
+User name: 	JXMEI
+User home directory: C:/Users/JXMEI
+User working directory: E:/mmm
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Vivado
+HDI_APPROOT: D:/Vivado/2017.2
+RDI_DATADIR: D:/Vivado/2017.2/data
+RDI_BINDIR: D:/Vivado/2017.2/bin
+
+User preferences location: C:/Users/JXMEI/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/JXMEI/AppData/Roaming/Xilinx/Vivado/2017.2/vivado.xml
+Vivado layouts directory: C:/Users/JXMEI/AppData/Roaming/Xilinx/Vivado/2017.2/layouts
+PlanAhead jar location: 	D:/Vivado/2017.2/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	E:/mmm/.Xil/Vivado-14112-JXM
+
+GUI allocated memory:	188 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 504 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 54 MB (+54286kb) [00:00:16]
+// [Engine Memory]: 487 MB (+359389kb) [00:00:16]
+// bs:g (cg:JFrame):  Open Project : addNotify
+// Opening Vivado Project: E:\mmm\project_12.xpr. Version: Vivado v2017.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/mmm/project_12.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project E:/mmm/project_12.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 58 MB (+1673kb) [00:00:21]
+// [Engine Memory]: 539 MB (+28387kb) [00:00:22]
+// [GUI Memory]: 63 MB (+1222kb) [00:00:22]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2017.2/data/ip'. 
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, bs:g)
+// HMemoryUtils.trashcanNow. Engine heap size: 563 MB. GUI used memory: 38 MB. Current time: 12/2/17 2:56:10 PM EST
+// Tcl Message: open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 786.043 ; gain = 25.418 
+// Project name: project_12; location: E:/mmm; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bs:g (cg:JFrame)
+closeMainWindow("project_12 - [E:/mmm/project_12.xpr] - Vivado 2017.2"); // cg:JFrame
+// HOptionPane Warning: 'A background task is running. Please wait until it completes to exit vivado. If you choose to abort background task and exit immediately, you will lose all unsaved changes to project. (Background Task)'
+// TclEventType: DG_ANALYSIS_MSG_RESET
