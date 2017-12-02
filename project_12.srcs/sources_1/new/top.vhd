@@ -103,6 +103,13 @@ port (
     OutputData : out STD_LOGIC_VECTOR (31 downto 0));
 end component;
 
+component ALU 
+port(
+ srcA : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+        srcB : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+        operation_select: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+        ALUResult : OUT STD_LOGIC_VECTOR (31 DOWNTO 0));
+ end component;
 
 begin
 decode: Decoder port map(opcode=>instr(31 downto 26), funct => instr(5 downto 0), MemtoReg => MemtoReg, MemWrite => MemWrite, branch => branch, ALUop => ALUop, ALUSrc => ALUSrc, RegDst => RegDst, RegWrite => RegWrite, JMP=>JMP);
@@ -113,6 +120,6 @@ instrmemory: IM port map(CLK => clk, PCPlus4=>PCPlus4,Instr=>instr, PCSrc=>PCSrc
 
 datamemo: DataMemoryModule port map(Clk => clk, WriteData => WriteData, InputAddr => ALUResult, OutputData => Result, ReadEnable=>MemtoReg,WriteEnable => MemWrite,Reset=>reset);
 
-
+alumodule: ALU port map (srcA => SrcA, srcB => SrcB, operation_select=>ALUop, ALUResult=>ALUResult);
 
 end Behavioral;

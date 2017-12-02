@@ -52,6 +52,14 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/ALU.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/ALU.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/Decoder.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -60,6 +68,22 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/IM.vhd">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Left_Shift.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/Left_Shift.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Right_Shift.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/Right_Shift.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -84,29 +108,11 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Left_Shift.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Counter.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU/6463processor-ALU/Left_Shift.vhd"/>
-          <Attr Name="ImportTime" Val="1512237520"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Right_Shift.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU/6463processor-ALU/Right_Shift.vhd"/>
-          <Attr Name="ImportTime" Val="1512237520"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/ALU.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU/6463processor-ALU/ALU.vhd"/>
-          <Attr Name="ImportTime" Val="1512237520"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/Counter.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -114,17 +120,8 @@
       <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/XOR_Gate.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU/6463processor-ALU/XOR_Gate.vhd"/>
-          <Attr Name="ImportTime" Val="1512237520"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Half_Adder.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU/6463processor-ALU/Half_Adder.vhd"/>
-          <Attr Name="ImportTime" Val="1512237520"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/XOR_Gate.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -132,8 +129,8 @@
       <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/AND_Gate.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU/6463processor-ALU/AND_Gate.vhd"/>
-          <Attr Name="ImportTime" Val="1512237520"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/AND_Gate.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -141,8 +138,26 @@
       <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Full_Adder.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU/6463processor-ALU/Full_Adder.vhd"/>
-          <Attr Name="ImportTime" Val="1512237520"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/Full_Adder.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Comparator.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/Comparator.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Half_Adder.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/Half_Adder.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -150,17 +165,8 @@
       <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/OR_Gate.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU/6463processor-ALU/OR_Gate.vhd"/>
-          <Attr Name="ImportTime" Val="1512237520"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Sign_Extension.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU/6463processor-ALU/Sign_Extension.vhd"/>
-          <Attr Name="ImportTime" Val="1512237520"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/OR_Gate.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -168,8 +174,17 @@
       <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/NOT_Gate.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU/6463processor-ALU/NOT_Gate.vhd"/>
-          <Attr Name="ImportTime" Val="1512237520"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/NOT_Gate.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/6463processor-ALU/Sign_Extension.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../6463processor-ALU_1/6463processor-ALU/Sign_Extension.vhd"/>
+          <Attr Name="ImportTime" Val="1512243978"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
