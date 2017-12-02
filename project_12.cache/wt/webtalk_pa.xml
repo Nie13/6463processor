@@ -3,9 +3,11 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
+
 <application name="pa" timeStamp="Tue Nov 28 11:24:36 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="d808909cdbde45268463a62edac7a307" type="ProjectID"/>
+
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
@@ -18,6 +20,7 @@ This means code written to parse this file will need to be revisited each subseq
 </item>
 <item name="Java Command Handlers">
 <property name="AddSources" value="1" type="JavaHandler"/>
+
 <property name="CloseProject" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
