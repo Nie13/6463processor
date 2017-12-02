@@ -58,3 +58,4 @@ INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/dat
 update_compile_order -fileset sources_1
 current_project project_12
 update_compile_order -fileset sources_1
+close_project

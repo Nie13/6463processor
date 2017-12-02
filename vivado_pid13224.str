@@ -503,3 +503,14 @@ unMinimizeFrame(PAResourceOtoP.PAViews_SOURCES, "Sources"); // ax:DockableFrame
 expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1); // B:i (D:JPanel, cg:JFrame)
 collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top(Behavioral) (top.vhd)]", 1); // B:i (D:JPanel, cg:JFrame)
 selectCodeEditor("top.vhd", 394, 122); // bI:J (JPanel:JComponent, cg:JFrame)
+// Elapsed time: 533 seconds
+closeMainWindow("project_12 - [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.xpr] - Vivado 2017.2"); // cg:JFrame
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// x:aN (cg:JFrame): Close Project: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, x:aN)
+// bs:g (cg:JFrame):  Close Project : addNotify
+// TclEventType: PROJECT_CLOSE
+dismissDialog("Close Project"); // x:aN (cg:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 503 MB. GUI used memory: 66 MB. Current time: 12/2/17 3:40:15 PM EST
+// Tcl Message: close_project 
+dismissDialog("Close Project"); // bs:g (cg:JFrame)

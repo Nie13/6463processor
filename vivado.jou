@@ -37,3 +37,4 @@ open_project -read_only C:/baiduyundownload/EENG483/project_30/project_30.xpr
 update_compile_order -fileset sources_1
 current_project project_12
 update_compile_order -fileset sources_1
+close_project
