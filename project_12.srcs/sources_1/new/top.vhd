@@ -53,7 +53,8 @@ signal WriteData: std_logic_vector (31 downto 0);
 signal PCPlus4: std_logic_vector(31 downto 0);
 signal PCBranch: std_logic_vector (31 downto 0);
 signal PCSrc: std_logic;
-
+signal ALUResult: std_logic_vector (31 downto 0);
+signal reset: std_logic;
 
 
 component Decoder
@@ -91,6 +92,17 @@ port(
 );
 end component;
 
+component DataMemoryModule
+port (
+    InputAddr : in STD_LOGIC_VECTOR(31 downto 0);					
+    WriteData  : in STD_LOGIC_VECTOR (31 downto 0);
+    ReadEnable : in STD_LOGIC;
+    WriteEnable : in STD_LOGIC;
+    Clk : in STD_LOGIC;
+    Reset : in STD_LOGIC;
+    OutputData : out STD_LOGIC_VECTOR (31 downto 0));
+end component;
+
 
 begin
 decode: Decoder port map(opcode=>instr(31 downto 26), funct => instr(5 downto 0), MemtoReg => MemtoReg, MemWrite => MemWrite, branch => branch, ALUop => ALUop, ALUSrc => ALUSrc, RegDst => RegDst, RegWrite => RegWrite, JMP=>JMP);
@@ -98,6 +110,8 @@ decode: Decoder port map(opcode=>instr(31 downto 26), funct => instr(5 downto 0)
 registerfi: registerfile port map(CLK=>clk, Instr=> instr,WD3=>Result, SrcA=>SrcA, SrcB=> SrcB, WriteData=>WriteData, RegWrite=>RegWrite, RegDst=>RegDst, ALUSrc=>ALUSrc, PCPlus4=>PCPlus4, PCBranch=>PCBranch );
 
 instrmemory: IM port map(CLK => clk, PCPlus4=>PCPlus4,Instr=>instr, PCSrc=>PCSrc,PCBranch=>PCBranch);
+
+datamemo: DataMemoryModule port map(Clk => clk, WriteData => WriteData, InputAddr => ALUResult, OutputData => Result, ReadEnable=>MemtoReg,WriteEnable => MemWrite,Reset=>reset);
 
 
 
