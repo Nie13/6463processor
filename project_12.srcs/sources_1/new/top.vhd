@@ -32,11 +32,24 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity top is
---  Port ( );
+  Port (
+     clk: in std_logic;
+     key_in: in std_logic;
+     enc: in std_logic;
+     dec: in std_logic;
+     reg: out mem_array;
+     ukey: in std_logic_vector(127 downto 0);
+     AB: in std_logic_vector(63 downto 0);
+     key_rdy: out std_logic;
+     memdata: out mem_array;
+     data_rdy: out std_logic;
+     changeInstruction: in std_logic_vector(31 downto 0);
+     changeAddress: in std_logic_vector(31 downto 0);
+     changecommit: in std_logic
+   );
 end top;
 
 architecture Behavioral of top is
-signal clk: std_logic;
 signal instr: std_logic_vector(31 downto 0);
 signal MemtoReg: std_logic;
 signal MemWrite: std_logic;
@@ -55,7 +68,7 @@ signal PCBranch: std_logic_vector (31 downto 0);
 signal PCSrc: std_logic;
 signal ALUResult: std_logic_vector (31 downto 0);
 signal reset: std_logic;
-
+type state is (LOADING, RUNNING, DONE);
 
 component Decoder
 port (
