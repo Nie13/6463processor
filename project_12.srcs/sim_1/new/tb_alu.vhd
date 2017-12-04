@@ -69,11 +69,11 @@ begin
 SrcA <= x"00000000";
 SrcB <= x"00000007";
 ALUop <= "000";
-wait for 300ns;
+wait for 100ns;
 SrcB <= x"00000008";
-wait for 300ns;
+wait for 100ns;
 SrcB <= x"00000000";
-wait for 300ns;
+wait for 100ns;
 ALUop <= "111";
 wait;
 end process;

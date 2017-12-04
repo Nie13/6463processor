@@ -69,14 +69,14 @@ SignImm <= x"0000" & Instr(15 downto 0);
 SignImm2 <= SignImm(29 downto 0) & SignImm (1 downto 0);
 
 
-with RegDst select
-    selA3 <= Instr(20 downto 16) when '0',
-            Instr(15 downto 11) when others;
+--with RegDst select
+--    selA3 <= Instr(20 downto 16) when '0',
+--            Instr(15 downto 11) when others;
             
             
-with ALUSrc select
-    SrcB <= RD2 when '0',
-            SignImm when others;            
+--with ALUSrc select
+--    SrcB <= RD2 when '0',
+--            SignImm when others;            
 
 PCBranch <= SignImm2 + PCPlus4;
 
@@ -84,12 +84,22 @@ PCBranch <= SignImm2 + PCPlus4;
 REGFILE: process(CLK)
 begin
     if (CLK'event and CLK = '1') then
-        RD1 <= registers(to_integer(unsigned(selA1)));
-        RD2 <= registers(to_integer(unsigned(selA2)));
+        RD1 <= registers(CONV_INTEGER(selA1));
+        RD2 <= registers(CONV_INTEGER(selA2));
         
         if (RegWrite = '1') then
-            registers(to_integer(unsigned(selA3))) <= WD3 (31 downto 0);
-        end if;    
+            if (RegDst = '0') then 
+            registers(CONV_INTEGER(Instr(20 downto 16))) <= WD3 (31 downto 0);
+            elsif(RegDst = '1') then
+            registers(CONV_INTEGER(Instr(15 downto 11))) <= WD3 (31 downto 0);
+            end if;    
+        end if;
+        
+        if (ALUSrc = '0') then
+            SrcB <= registers(CONV_INTEGER(selA2));
+        elsif (ALUSrc = '1') then
+            SrcB <= x"0000" & Instr(15 downto 0);
+        end if;
         
     end if; 
 end process;

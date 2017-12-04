@@ -4,23 +4,24 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity DataMemoryModule is
-		 port ( InputAddr : in STD_LOGIC_VECTOR(31 downto 0);					
+		 port ( InputAddr : in STD_LOGIC_VECTOR(31 downto 0):=(others => '0');					
 				  WriteData  : in STD_LOGIC_VECTOR (31 downto 0);
 				  ReadEnable : in STD_LOGIC;
 				  WriteEnable : in STD_LOGIC;
 				  Clk : in STD_LOGIC;
 --				  Reset : in STD_LOGIC;
-				  OutputData : out STD_LOGIC_VECTOR (31 downto 0));
+				  OutputData : out STD_LOGIC_VECTOR (31 downto 0):= (others => '0'));
 end DataMemoryModule;
 
 architecture Behavioral of DataMemoryModule is
 
 	type RAM is array (0 to 63) of STD_LOGIC_VECTOR (31 downto 0);
 	SIGNAL data_mem: RAM:= (others => (others => '0'));
-	signal ReadData: std_logic_vector (31 downto 0);
+	signal ReadData: std_logic_vector (31 downto 0):= x"00000000";
+	
 
 begin
-
+    OutputData <= ReadData;
 	process (Clk) begin
 		--if (rising_edge(Clk)) then
 --			if (Reset='1') then 
@@ -42,10 +43,18 @@ begin
 --										x"00000000", x"00000000", x"00000000", x"00000000");
 			-- idk y this part is here
 			if (Clk'event and Clk = '1') then
-			    ReadData <= data_mem(CONV_INTEGER(InputAddr));
+--			    ReadData <= data_mem(CONV_INTEGER(InputAddr));
 				if (WriteEnable = '1') then
 				    data_mem(CONV_INTEGER(InputAddr)) <= WriteData;				    
 				end if;
+				if (ReadEnable = '1') then
+				   ReadData <= data_mem(CONV_INTEGER(InputAddr));
+				else
+				    ReadData <= InputAddr;
+				end if;
+--				with ReadEnable select
+--                       OutputData <= ReadData when '1',
+--                                   InputAddr when others;
 			
 --				if(WriteEnable = '1' and ReadEnable = '1') then
 --					OutputData <= WriteData;
@@ -59,9 +68,9 @@ begin
 		--end if;	
 	end process;
 	
-	with ReadEnable select
-	   OutputData <= ReadData when '1',
-	               InputAddr when others;
+--	with ReadEnable select
+--	   OutputData <= ReadData when '1',
+--	               InputAddr when others;
 	               
 
 --	process (ReadEnable, data_mem, InputAddr) begin
