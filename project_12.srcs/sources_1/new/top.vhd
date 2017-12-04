@@ -125,7 +125,8 @@ port(
         srcB : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
         ALUControl: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
         ALUResult : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
-        ALUZero: out std_logic);
+        ALUZero: out std_logic;
+        CLK: in std_logic);
  end component;
 
 begin
@@ -137,7 +138,7 @@ instrmemory: IM port map(CLK => clk, PCPlus4=>PCPlus4,Instr=>instr, PCSrc=>PCSrc
 
 datamemo: DataMemoryModule port map(Clk => clk, WriteData => WriteData, InputAddr => ALUResult, OutputData => Result, ReadEnable=>MemtoReg,WriteEnable => MemWrite);
 
-alumodule: ALU port map (srcA => SrcA, srcB => SrcB, ALUControl=>ALUop, ALUResult=>ALUResult, ALUZero => zero);
+alumodule: ALU port map (srcA => SrcA, srcB => SrcB, ALUControl=>ALUop, ALUResult=>ALUResult, ALUZero => zero, CLK=>clk);
 
 getpcsrc: process( zero, branch)
 begin
