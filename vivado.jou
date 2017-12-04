@@ -36,3 +36,6 @@ close [ open C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_
 add_files -fileset sim_1 C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_instr.vhd
 update_compile_order -fileset sim_1
 close_project
+open_project C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.xpr
+update_compile_order -fileset sources_1
+close_project

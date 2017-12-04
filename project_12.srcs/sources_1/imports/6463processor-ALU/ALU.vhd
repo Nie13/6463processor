@@ -32,30 +32,30 @@ END ALU;
 
 ARCHITECTURE Behavioral OF ALU IS
 
-	COMPONENT Left_Shift IS
-			 PORT ( a: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-					  b: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-					  o: OUT STD_LOGIC_VECTOR(31 DOWNTO 0));
-	END COMPONENT;
+--	COMPONENT Left_Shift IS
+--			 PORT ( a: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+--					  b: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+--					  o: OUT STD_LOGIC_VECTOR(31 DOWNTO 0));
+--	END COMPONENT;
 
-	COMPONENT Right_Shift IS
-			 PORT ( a: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-					  b: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-					  o: OUT STD_LOGIC_VECTOR(31 DOWNTO 0));
-	END COMPONENT;      
+--	COMPONENT Right_Shift IS
+--			 PORT ( a: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+--					  b: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+--					  o: OUT STD_LOGIC_VECTOR(31 DOWNTO 0));
+--	END COMPONENT;      
 
 	SIGNAL op_1: STD_LOGIC_VECTOR(31 DOWNTO 0)   := (OTHERS => '0');
 	SIGNAL op_2: STD_LOGIC_VECTOR(31 DOWNTO 0)   := (OTHERS => '0');
 	SIGNAL ooo : STD_LOGIC_VECTOR (31 DOWNTO 0)  := (OTHERS => '0');
-	SIGNAL l_s : STD_LOGIC_VECTOR(31 DOWNTO 0):= (OTHERS => '0');
-	SIGNAL r_s : STD_LOGIC_VECTOR(31 DOWNTO 0):= (OTHERS => '0');
+--	SIGNAL l_s : STD_LOGIC_VECTOR(31 DOWNTO 0):= (OTHERS => '0');
+--	SIGNAL r_s : STD_LOGIC_VECTOR(31 DOWNTO 0):= (OTHERS => '0');
 	
 BEGIN
 
 	op_1 <= STD_LOGIC_VECTOR(srcA);
 	op_2 <= STD_LOGIC_VECTOR(srcB);
 
-	PROCESS (ALUControl,  l_s, r_s) 
+	PROCESS (ALUControl) 
 	BEGIN
 		
 		CASE ALUControl IS
@@ -70,11 +70,34 @@ BEGIN
 			WHEN OTHERS=> NULL;
 
 		END CASE;
+		-- code x09
+		if (ALUControl = "001") then
+		  if (op_1 < op_2) then
+		      ALUZero <= '1';
+		   else
+		      ALUZero <= '0';
+		   end if;
+		 -- code x0A
+		elsif (ALUControl = "101") then
+		  if (op_1 = op_2) then
+		      ALUZero <= '1';
+		  else
+		      ALUZero <= '0';
+		  end if;
+		  -- code x0B
+		  elsif (ALUControl = "110") then
+		      if not(op_1 = op_2) then
+		          ALUZero <= '1';
+		      else
+		          ALUZero <= '0';
+		      end if;
+		      
+		end if;
 	END PROCESS;
 
-	L_SHIFT	:	Left_Shift PORT MAP(a=>op_1,b=>op_2,o=>l_s);
+--	L_SHIFT	:	Left_Shift PORT MAP(a=>op_1,b=>op_2,o=>l_s);
 					 
-	R_SHIFT	:	Right_Shift PORT MAP(a=>op_1,b=>op_2,o=>r_s);				 
+--	R_SHIFT	:	Right_Shift PORT MAP(a=>op_1,b=>op_2,o=>r_s);				 
 
 	ALUResult <= STD_LOGIC_VECTOR (ooo);
 

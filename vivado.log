@@ -83,3 +83,13 @@ close [ open C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_
 add_files -fileset sim_1 C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_instr.vhd
 update_compile_order -fileset sim_1
 close_project
+open_project C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+update_compile_order -fileset sources_1
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  4 07:59:43 2017...

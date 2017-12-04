@@ -33,7 +33,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity top is
   Port (
-     clk: in std_logic
+     clk: in std_logic;
+     PCout: out std_logic_vector (31 downto 0);
+     ALURsultout : out std_logic_vector (31 downto 0);
+     Resultout: out std_logic_vector (31 downto 0)    
 --     key_in: in std_logic;
 --     enc: in std_logic;
 --     dec: in std_logic;
@@ -67,8 +70,9 @@ signal PCPlus4: std_logic_vector(31 downto 0);
 signal PCBranch: std_logic_vector (31 downto 0);
 signal PCSrc: std_logic;
 signal ALUResult: std_logic_vector (31 downto 0);
-signal reset: std_logic;
-type state is (LOADING, RUNNING, DONE);
+signal reset: std_logic; -- only used in dm considering removing
+signal zero: std_logic;
+type state is (LOADING, RUNNING, DONE); -- not used currently
 
 component Decoder
 port (
@@ -112,7 +116,6 @@ port (
     ReadEnable : in STD_LOGIC;
     WriteEnable : in STD_LOGIC;
     Clk : in STD_LOGIC;
-    Reset : in STD_LOGIC;
     OutputData : out STD_LOGIC_VECTOR (31 downto 0));
 end component;
 
@@ -120,8 +123,9 @@ component ALU
 port(
  srcA : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
         srcB : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-        operation_select: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
-        ALUResult : OUT STD_LOGIC_VECTOR (31 DOWNTO 0));
+        ALUControl: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+        ALUResult : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
+        ALUZero: out std_logic);
  end component;
 
 begin
@@ -131,8 +135,24 @@ registerfi: registerfile port map(CLK=>clk, Instr=> instr,WD3=>Result, SrcA=>Src
 
 instrmemory: IM port map(CLK => clk, PCPlus4=>PCPlus4,Instr=>instr, PCSrc=>PCSrc,PCBranch=>PCBranch);
 
-datamemo: DataMemoryModule port map(Clk => clk, WriteData => WriteData, InputAddr => ALUResult, OutputData => Result, ReadEnable=>MemtoReg,WriteEnable => MemWrite,Reset=>reset);
+datamemo: DataMemoryModule port map(Clk => clk, WriteData => WriteData, InputAddr => ALUResult, OutputData => Result, ReadEnable=>MemtoReg,WriteEnable => MemWrite);
 
-alumodule: ALU port map (srcA => SrcA, srcB => SrcB, operation_select=>ALUop, ALUResult=>ALUResult);
+alumodule: ALU port map (srcA => SrcA, srcB => SrcB, ALUControl=>ALUop, ALUResult=>ALUResult, ALUZero => zero);
+
+getpcsrc: process( zero, branch)
+begin
+if (zero = '1') then
+    if not (branch = "00") then
+        PCSrc <= '1';
+    else
+        PCSrc <= '0';
+    end if;
+else
+    PCSrc <= '0';
+end if;
+end process;
+
+
+
 
 end Behavioral;

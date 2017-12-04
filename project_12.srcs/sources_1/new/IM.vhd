@@ -66,17 +66,33 @@ entity IM is
 end IM;
 
 architecture Behavioral of IM is
-		signal dataout : std_logic_vector(31 downto 0);
-		signal IM_rom : STD_LOGIC;
 		signal PCbar: std_logic_vector (31 downto 0);
-		signal PC: std_logic_vector(31 downto 0);
+		signal PC: std_logic_vector(31 downto 0) := x"00000000";
 		signal PCplus: std_logic_vector (31 downto 0);
-		type instruction_array is array(0 to 3) of std_logic_vector (31 downto 0);
+		type instruction_array is array(0 to 21) of std_logic_vector (31 downto 0);
 		signal data_mem: instruction_array := (
 		  "00000100000000010000000000000111",
 		  "00000100000000100000000000001000",
 		  "00000000010000010001100000010000",
-		  "11111100000000000000000000000000"
+		  "11111100000000000000000000000000",
+		  x"00000004",
+		  x"00000005",
+		  x"00000006",
+		  x"00000007",
+		  x"00000008",
+		  x"00000009",
+		  x"0000000A",
+		  x"0000000B",
+		  x"0000000C",
+		  x"0000000D",
+		  x"0000000E",
+		  x"0000000F",
+		  x"00000010",
+		  x"00000011",
+		  x"00000012",
+		  x"00000013",
+		  x"00000014",
+		  x"00000015"	  
 		);
 begin
 --MUX: process(PCSrc)
@@ -87,7 +103,8 @@ PCbar <= PCPlus when '0',
 --end process;
 --lastInsaddress <= "00000000000000000000000100101100";
 Instr <= data_mem(conv_integer(PC(31 downto 2)));
-
+PCPlus <= PC + 4;
+PCPlus4 <= PCPlus;
 REGIST: process(CLK)
 begin
     if(CLK'event and CLK = '1') then
@@ -95,11 +112,7 @@ begin
     end if;
 end process;   
 
-PLUS: process(PC)
-begin
-    PCPlus <= PC + 4;
-    PCPlus4 <= PCPlus;
-end process;
+
 
 end Behavioral;
 

@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: Nie13
 -- 
--- Create Date: 12/04/2017 05:56:13 AM
+-- Create Date: 12/04/2017 10:36:07 AM
 -- Design Name: 
--- Module Name: tb_instr - Behavioral
+-- Module Name: tb_IM - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,11 +31,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity tb_instr is
+entity tb_IM is
 --  Port ( );
-end tb_instr;
+end tb_IM;
 
-architecture Behavioral of tb_instr is
+architecture Behavioral of tb_IM is
 component IM
 port(
    PCBranch: in std_logic_vector (31 downto 0);
@@ -45,8 +45,30 @@ port(
    PCSrc: in std_logic
 );
 end component;
-signal PCBranch: 
-begin
 
+ signal  PCBranch: std_logic_vector (31 downto 0);
+ signal  PCPlus4: std_logic_vector (31 downto 0);
+ signal  Instr: std_logic_vector (31 downto 0);
+ signal  CLK: std_logic; 
+ signal  PCSrc: std_logic;
+
+begin
+DUT: IM port map(PCBranch, PCPlus4, Instr, CLK, PCSrc);
+
+
+CLOCK: process
+begin
+    CLK <= '1';
+    wait for 50ns;
+    CLK <= '0';
+    wait for 50ns;
+end process;
+
+process
+begin
+PCSrc <= '0';
+PCBranch <= x"00000000";
+wait;
+end process;
 
 end Behavioral;

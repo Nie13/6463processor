@@ -54,7 +54,7 @@ begin
 					 '0' when others;
 	
 	 with opcode select
-	   RegDst <= '1' when x"00",
+	   RegDst <= '1' when "000000",
 	       '0' when others;
 	 
 --	RegDst <= '1' when (opcode="000000" and funct="010000"|"010001"|"010010"|"010011"|"010100"),
@@ -78,6 +78,9 @@ begin
 				"011" when(opcode = "000100") else			
 				"011" when(opcode = "000000" and funct="010011") else
 				"100" when(opcode = "000000" and funct="010100") else
+				"001" when(opcode = "001001") else
+				"101" when(opcode = "001010") else
+				"110" when(opcode = "001011") else
 --				"110" when(opcode = "000101") else
 --				"111" when(opcode = "000110") else
 				"111";
