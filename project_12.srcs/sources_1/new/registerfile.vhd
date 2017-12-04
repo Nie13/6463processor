@@ -68,6 +68,19 @@ WriteData <= RD2;
 SignImm <= x"0000" & Instr(15 downto 0);
 SignImm2 <= SignImm(29 downto 0) & SignImm (1 downto 0);
 
+
+with RegDst select
+    selA3 <= Instr(20 downto 16) when '0',
+            Instr(15 downto 11) when others;
+            
+            
+with ALUSrc select
+    SrcB <= RD2 when '0',
+            SignImm when others;            
+
+PCBranch <= SignImm2 + PCPlus4;
+
+      
 REGFILE: process(CLK)
 begin
     if (CLK'event and CLK = '1') then
@@ -81,25 +94,25 @@ begin
     end if; 
 end process;
 
-GETDST: process(RegDst, Instr)
-begin
-    case RegDst is
-        when '0'=> selA3 <= Instr(20 downto 16);
-        when '1'=> selA3 <= Instr(15 downto 11);
-    end case;
-end process;
+--GETDST: process(RegDst, Instr)
+--begin
+--    case RegDst is
+--        when '0'=> selA3 <= Instr(20 downto 16);
+--        when '1'=> selA3 <= Instr(15 downto 11);
+--    end case;
+--end process;
 
-GETSRCB: process(RD2, SignImm, ALUSrc)
-begin
-    case ALUSrc is
-        when '0'=> SrcB <= RD2;
-        when '1'=> SrcB <= SignImm;
-    end case;    
-end process;
+--GETSRCB: process(RD2, SignImm, ALUSrc)
+--begin
+--    case ALUSrc is
+--        when '0'=> SrcB <= RD2;
+--        when '1'=> SrcB <= SignImm;
+--    end case;    
+--end process;
 
-GETPCBRANCH: process(SignImm2, PCPlus4)
-begin
-    PCBranch <= SignImm2 + PCPlus4;    
-end process;
+--GETPCBRANCH: process(SignImm2, PCPlus4)
+--begin
+--    PCBranch <= SignImm2 + PCPlus4;    
+--end process;
 
 end Behavioral;

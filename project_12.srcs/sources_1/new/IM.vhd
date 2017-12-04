@@ -41,6 +41,13 @@ entity IM is
    Instr: out std_logic_vector (31 downto 0);
    CLK: in std_logic; 
    PCSrc: in std_logic
+   
+--   ReadAddress: in STD_LOGIC_VECTOR (31 downto 0);           
+--   LastInsAddress: out STD_LOGIC_VECTOR (31 downto 0);
+--   changeInstruction: in std_logic_vector(31 downto 0);
+--   changeAddress: in std_logic_vector(31 downto 0);
+--   changecommit: in std_logic
+
 --		PCounter	: IN		STD_LOGIC_VECTOR (31 downto 0);
 --		IM_in		: IN		STD_LOGIC;
 --		IsItype	: OUT		STD_LOGIC;
@@ -59,71 +66,103 @@ entity IM is
 end IM;
 
 architecture Behavioral of IM is
-		signal dataout : std_logic_vector(31 downto 0);
-		signal IM_rom : STD_LOGIC;
-		signal PCbar: std_logic_vector (31 downto 0);
+		signal PCbar: std_logic_vector (31 downto 0) := x"00000000";
 		signal PC: std_logic_vector(31 downto 0);
-		signal PCplus: std_logic_vector (31 downto 0);
+		signal PCplus: std_logic_vector (31 downto 0) := x"00000000";
+		type instruction_array is array(0 to 63) of std_logic_vector (31 downto 0);
+		signal data_mem: instruction_array := (
+		  "00000100000000010000000000000111",
+		  "00000100000000100000000000001000",
+		  "00000000010000010001100000010000",
+		  "11111100000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000",
+		  "00000000000000000000000000000000"		  
+		);
 begin
-MUX: process(PCSrc)
-begin
-    case PCSrc is
-        when '0' => PCbar <= PCplus;
-        when others => PCbar <= PCBranch;
-    end case;
-end process;
+
+--lastInsaddress <= "00000000000000000000000100101100";
+Instr <= data_mem(conv_integer(PC(31 downto 2)));
+
+--PCPlus <= PC + 4;
+
+PCPlus4 <= PCPlus;
 
 REGIST: process(CLK)
 begin
     if(CLK'event and CLK = '1') then
         PC <= PCbar;
+        PCPlus <= PCbar + 4;
     end if;
 end process;   
 
-PLUS: process(PC)
+MUX: process(CLK)
 begin
-    PCPlus <= PC + 4;
-    PCPlus4 <= PCPlus;
+if (CLK'event and CLK = '1') then
+case PCSrc is
+when '0' => PCbar <= PCPlus;
+when others => PCbar <= PCBranch;
+end case;
+end if;
 end process;
 
-INSTRUCTION: process(PC)
-begin
-    Instr <= PC;
-end process;
 
---	process(PCounter,IM_rom,dataout,IM_in)
---	begin
-	
---IM_rom<=IM_in;
-
---Opcode <= dataout(31 downto 26); 
---Rs <= dataout(25 downto 21); 
---Rt <= dataout(20 downto 16); 
---Rd <= dataout(15 downto 11); 
---Shamt <= dataout (10 downto 6); 
---Funct <= dataout (5 downto 0); 
---Imm <= dataout (15 downto 0);
---Address <= dataout(25 downto 0);
-
---		if (dataout(31 downto 26)="000000") THEN
---			IsRtype <= '1'; 
---			IsItype <= '0'; 
---			IsJtype<= '0'; 
---		elsif (dataout(31 downto 26) = "000001" or dataout(31 downto 26) = "000010" or dataout(31 downto 26) = "000011" or dataout(31 downto 26) = "000100" or dataout(31 downto 26) = "000101" or dataout(31 downto 26) = "000110" or dataout(31 downto 26) = "000111" or dataout(31 downto 26) = "001000" or dataout(31 downto 26) = "001001" or dataout(31 downto 26) = "001010" or dataout(31 downto 26) = "001011") THEN
---			IsRtype <= '0'; 
---			IsItype <= '1'; 
---			IsJtype<='0'; 
---		elsif (dataout(31 downto 26) = "001100" or dataout(31 downto 26) = "111111") THEN
---			IsRtype <= '0'; IsItype <= '0'; IsJtype<='1';
---		else
---			IsRtype <= '0'; IsItype <= '0'; IsJtype<='0';
---		end if;
---	IM_out<=IM_rom;
---	end process;
-	
---    process()
---    begin
-    
---    end process;
 end Behavioral;
 

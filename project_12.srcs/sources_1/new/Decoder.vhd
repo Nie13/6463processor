@@ -52,8 +52,13 @@ begin
 	with opcode select
 		ALUSrc <= '1' when "000001"|"000010"|"000011"|"000111"|"001000",
 					 '0' when others;
-	RegDst <= '1' when (opcode="000000" and funct="010000"|"010001"|"010010"|"010011"|"010100") else
-				 '0' ;
+	
+	 with opcode select
+	   RegDst <= '1' when "000000",
+	       '0' when others;
+	 
+--	RegDst <= '1' when (opcode="000000" and funct="010000"|"010001"|"010010"|"010011"|"010100"),
+--				 '0' when others ;
 	with opcode select 
 		JMP <= '1' when "001100",
 				  '0' WHEN others;
@@ -62,19 +67,22 @@ begin
 					"10" when "001010",
 					"11" when "001011",
 					"00" when others;
-	ALUop <= "001" when(opcode = "000000" and funct="010000") else
-				"001" when(opcode = "000001") else
-				"001" when(opcode = "000111") else
-				"001" when(opcode = "001000") else
-				"010" when(opcode = "000000" and funct="010001") else
-				"010" when(opcode = "000010") else
-				"011" when(opcode = "000000" and funct="010010") else
-				"011" when(opcode = "000011") else			
-				"100" when(opcode = "000100") else			
-				"100" when(opcode = "000000" and funct="010011") else
-				"101" when(opcode = "000000" and funct="010100") else
-				"110" when(opcode = "000101") else
-				"111" when(opcode = "000110") else
-				"000";
+	ALUop <= "000" when(opcode = "000000" and funct="010000") else
+				"000" when(opcode = "000001") else
+				"000" when(opcode = "000111") else
+				"000" when(opcode = "001000") else
+				"001" when(opcode = "000000" and funct="010001") else
+				"001" when(opcode = "000010") else
+				"010" when(opcode = "000000" and funct="010010") else
+				"010" when(opcode = "000011") else			
+				"011" when(opcode = "000100") else			
+				"011" when(opcode = "000000" and funct="010011") else
+				"100" when(opcode = "000000" and funct="010100") else
+				"001" when(opcode = "001001") else
+				"101" when(opcode = "001010") else
+				"110" when(opcode = "001011") else
+--				"110" when(opcode = "000101") else
+--				"111" when(opcode = "000110") else
+				"111";
 end Behavioral;
 

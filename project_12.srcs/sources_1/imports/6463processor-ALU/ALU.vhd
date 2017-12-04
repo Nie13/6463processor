@@ -2,7 +2,7 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    16:02:56 11/30/2017 
+-- Create Date:    17:21:05 12/02/2017 
 -- Design Name: 
 -- Module Name:    ALU - Behavioral 
 -- Project Name: 
@@ -20,63 +20,79 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_SIGNED.ALL;
-USE IEEE.NUMERIC_STD.ALL;
+--USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY ALU IS
-		 PORT ( op_1 : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-				  op_2 : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-				  operation_select: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
-				  output : OUT STD_LOGIC_VECTOR (31 DOWNTO 0));		
+		 PORT ( srcA : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+				  srcB : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+				  ALUControl: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+				  ALUResult : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
+				  ALUZero: out std_logic;
+				  CLK: in std_logic);		
 END ALU;
 
 ARCHITECTURE Behavioral OF ALU IS
 
-	COMPONENT Left_Shift IS
-			 PORT ( input: IN SIGNED(31 DOWNTO 0);
-					  I: IN SIGNED (31 DOWNTO 0);
-					  output: OUT SIGNED(31 DOWNTO 0));
-	END COMPONENT;
-
-	COMPONENT Right_Shift IS
-			 PORT ( input: IN SIGNED(31 DOWNTO 0);
-					  I: IN SIGNED(31 DOWNTO 0);
-					  output: OUT SIGNED(31 DOWNTO 0));
-	END COMPONENT;      
-
-	SIGNAL a: SIGNED(31 DOWNTO 0)   := (OTHERS => '0');
-	SIGNAL b: SIGNED(31 DOWNTO 0)   := (OTHERS => '0');
-	SIGNAL o : SIGNED (31 DOWNTO 0)  := (OTHERS => '0');
-	SIGNAL l_s : SIGNED(31 DOWNTO 0):= (OTHERS => '0');
-	SIGNAL r_s : SIGNED(31 DOWNTO 0):= (OTHERS => '0');
-	
+	SIGNAL op_1: STD_LOGIC_VECTOR(31 DOWNTO 0)   := (OTHERS => '0');
+	SIGNAL op_2: STD_LOGIC_VECTOR(31 DOWNTO 0)   := (OTHERS => '0');
+	SIGNAL ooo : STD_LOGIC_VECTOR (31 DOWNTO 0)  := (OTHERS => '0');
+	signal boo: std_logic := '0';
 BEGIN
 
-	a <= SIGNED(op_1);
-	b <= SIGNED(op_2);
+	op_1 <= srcA;
+	op_2 <= srcB;
 
-	PROCESS (operation_select, op_1, op_2, a, b, l_s, r_s) 
+	PROCESS (CLK) 
 	BEGIN
 		
-		CASE operation_select IS
+--		CASE ALUControl IS
 
-			WHEN "000" => o <= a + b;
-			WHEN "001" => o <= a - b;
-			WHEN "010" => o <= a AND b;
-			WHEN "011" => o <= a OR b;
-			WHEN "100" => o <= a NOR b;
-			WHEN "101" => o <= l_s;
-			WHEN "110" => o <= r_s;
-			WHEN OTHERS=> NULL;
+--			WHEN "000" => ooo <= op_1 + op_2;
+--			WHEN "001" => ooo <= op_1 - op_2;
+--			WHEN "010" => ooo <= op_1 AND op_2;
+--			WHEN "011" => ooo <= op_1 OR op_2;
+--			WHEN "100" => ooo <= op_1 NOR op_2;
+--			WHEN OTHERS=> NULL;
 
-		END CASE;
+--		END CASE;
+if (CLK'event and CLK = '1') then
+		-- code x09
+		if (ALUControl= "000") then
+		  ooo<= op_1 + op_2;
+		elsif (ALUControl = "010") then
+		  ooo<= op_1 AND op_2;
+		elsif (ALUControl = "011") then
+		  ooo<=op_1 OR op_2;
+		elsif (ALUControl = "100") then
+		  ooo <= op_1 NOR op_2;
+		elsif (ALUControl = "001") then
+		  ooo <= op_1 - op_2;
+		  if (op_1 < op_2) then
+		      boo <= '1';
+		   else
+		      boo <= '0';
+		   end if;
+		 -- code x0A
+		elsif (ALUControl = "101") then
+		  if (op_1 = op_2) then
+		      boo <= '1';
+		  else
+		      boo <= '0';
+		  end if;
+		  -- code x0B
+		  elsif (ALUControl = "110") then
+		      if not(op_1 = op_2) then
+		          boo <= '1';
+		      else
+		          boo <= '0';
+		      end if;
+		      
+		end if;
+end if;
 	END PROCESS;
+			 
 
-	L_SHIFT	:	Left_Shift 
-						PORT MAP(a,b,l_s);
-					 
-	R_SHIFT	:	Right_Shift 
-						PORT MAP(a,b,r_s);				 
-
-	output <= STD_LOGIC_VECTOR (o);
-
+	ALUResult <= ooo;
+    ALUZero <= boo;
 END Behavioral;
+
