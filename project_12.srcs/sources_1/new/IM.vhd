@@ -66,8 +66,8 @@ entity IM is
 end IM;
 
 architecture Behavioral of IM is
-		signal PCbar: std_logic_vector (31 downto 0);
-		signal PC: std_logic_vector(31 downto 0) := x"00000000";
+		signal PCbar: std_logic_vector (31 downto 0) := x"00000000";
+		signal PC: std_logic_vector(31 downto 0);
 		signal PCplus: std_logic_vector (31 downto 0);
 		type instruction_array is array(0 to 21) of std_logic_vector (31 downto 0);
 		signal data_mem: instruction_array := (

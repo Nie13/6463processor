@@ -2,40 +2,52 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Mon Dec  4 04:07:32 2017
-# Process ID: 9512
+# Start of session at: Mon Dec  4 11:02:45 2017
+# Process ID: 5404
 # Current directory: C:/Users/l/Desktop/6463ADVHDes/code/project_12
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7772 C:\Users\l\Desktop\6463ADVHDes\code\project_12\project_12.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7352 C:\Users\l\Desktop\6463ADVHDes\code\project_12\project_12.xpr
 # Log file: C:/Users/l/Desktop/6463ADVHDes/code/project_12/vivado.log
 # Journal file: C:/Users/l/Desktop/6463ADVHDes/code/project_12\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.xpr
 update_compile_order -fileset sources_1
-create_project project_13 C:/Users/l/Desktop/6463ADVHDes/code/project_13 -part xc7a35tcpg236-1
-set_property target_language VHDL [current_project]
-import_files -norecurse {{C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/ALU.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/Comparator.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/MUX.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/InstructionMem.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/PC.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/PCMUX.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/DataMem.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/SignExtend.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/clock_divider.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/main.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/rc5_segmentdriver.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/segmentdecoder.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/RegisterFile.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/topdesign.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/final.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/Decoder.vhd} {C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-20171204T092727Z-001/VHDL w UCF/Adder.vhd}}
-update_compile_order -fileset sources_1
-current_project project_12
-close_project
-open_project C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.xpr
-update_compile_order -fileset sources_1
-current_project project_13
-current_project project_12
-current_project project_13
-current_project project_12
-current_project project_13
-current_project project_12
-current_project project_13
-current_project project_12
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-file mkdir C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new
+launch_simulation
+source tb_IM.tcl
+relaunch_sim
+close_sim
+launch_simulation
+source tb_IM.tcl
+close_sim
 set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_instr.vhd w ]
-add_files -fileset sim_1 C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_instr.vhd
+close [ open C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_decode.vhd w ]
+add_files -fileset sim_1 C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_decode.vhd
 update_compile_order -fileset sim_1
-close_project
-open_project C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.xpr
-update_compile_order -fileset sources_1
-close_project
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_decode [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source tb_decode.tcl
+close_sim
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_register.vhd w ]
+add_files -fileset sim_1 C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_register.vhd
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_decode.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_register [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_register.tcl
+close_sim
