@@ -71,6 +71,7 @@ architecture Behavioral of IM is
 		signal PCplus: std_logic_vector (31 downto 0) := x"00000000";
 		type instruction_array is array(0 to 63) of std_logic_vector (31 downto 0);
 		signal data_mem: instruction_array := (
+		  "00000000000000000000000000000000",
 		  "00000100000000010000000000000111",
 		  "00000100000000100000000000001000",
 		  "00000000010000010001100000010000",
@@ -91,7 +92,27 @@ architecture Behavioral of IM is
 		  "00000000000000000000000000000000",
 		  "00000000000000000000000000000000",
 		  "00000000000000000000000000000000",
-		  "00000000000000000000000000000000",
+--          "00000100000000010000000000000010", 
+--          "00000100000000110000000000001010",
+--           "00000100000001000000000000001110",
+--            "00000100000001010000000000000010",
+--            "00100000011001000000000000000010",
+--            "00100000011000110000000000000001",
+--          "00000000100000110010000000010001", 
+--          "00001000000001000000000000000001" ,
+--          "00000000011000100010000000010010", 
+--          "00001100010001000000000000001010" ,
+--          "00000000011000100010000000010011",
+--          "00011100011000100000000000000001" ,
+--          "00010000010001000000000000001010" ,
+--          "00000000011000100010000000010100", 
+--          "00010100010001000000000000001010",
+--          "00011000010001000000000000001010",
+--          "00101000000001011111111111111110",
+--          "00100100100001010000000000000000",
+--          "00101100100001010000000000000000",
+--          "00110000000000000000000000010100", 
+--          "11111100000000000000000000000000", 
 		  "00000000000000000000000000000000",
 		  "00000000000000000000000000000000",
 		  "00000000000000000000000000000000",
@@ -139,7 +160,7 @@ architecture Behavioral of IM is
 begin
 
 --lastInsaddress <= "00000000000000000000000100101100";
-Instr <= data_mem(conv_integer(PC(31 downto 2)));
+--Instr <= data_mem(conv_integer(PC(31 downto 2)));
 
 --PCPlus <= PC + 4;
 
@@ -148,20 +169,33 @@ PCPlus4 <= PCPlus;
 REGIST: process(CLK)
 begin
     if(CLK'event and CLK = '1') then
+--        case PCSrc is
+--        when '0' => PCbar <= PCPlus;
+--        when others => PCbar <= PCBranch;
+--        end case;
+        Instr <= data_mem(conv_integer(PCbar(31 downto 2)));
         PC <= PCbar;
         PCPlus <= PCbar + 4;
+        if (PCSrc = '0') then
+            PCbar <= PCbar + 4;
+        else
+            PCbar <= PCBranch;
+        end if;
     end if;
 end process;   
 
-MUX: process(CLK)
-begin
-if (CLK'event and CLK = '1') then
-case PCSrc is
-when '0' => PCbar <= PCPlus;
-when others => PCbar <= PCBranch;
-end case;
-end if;
-end process;
+--with PCSrc select
+--    PCbar <= PCPlus when '0',
+--        PCBranch when others;
+--MUX: process(CLK)
+--begin
+--if (CLK'event and CLK = '1') then
+--case PCSrc is
+--when '0' => PCbar <= PCPlus;
+--when others => PCbar <= PCBranch;
+--end case;
+--end if;
+--end process;
 
 
 end Behavioral;

@@ -40,17 +40,21 @@ component top
 port (clk: in std_logic;
      PCout: out std_logic_vector (31 downto 0);
      ALURsultout : out std_logic_vector (31 downto 0);
-     Resultout: out std_logic_vector (31 downto 0) );
+     Resultout: out std_logic_vector (31 downto 0);
+     SrcAOut : out std_logic_vector (31 downto 0);
+     SrcBOut : out std_logic_Vector (31 downto 0) );
 end component;
 
 signal clk: std_logic;
+signal clkr: std_logic;
 signal PCout: std_logic_vector (31 downto 0);
 signal ALUResult:  std_logic_vector (31 downto 0);
 signal Resultout: std_logic_vector (31 downto 0);
-
+signal SrcAOut: std_logic_vector (31 downto 0);
+signal SrcBOut: std_logic_vector (31 downto 0);
 
 begin
-DUT: top port map (clk, PCout, ALUResult, Resultout);
+DUT: top port map (clk, PCout, ALUResult, Resultout, SrcAOut, SrcBOut);
 
 
 CLOCK: process

@@ -36,7 +36,12 @@ entity top is
      clk: in std_logic;
      PCout: out std_logic_vector (31 downto 0);
      ALURsultout : out std_logic_vector (31 downto 0);
-     Resultout: out std_logic_vector (31 downto 0)    
+     Resultout: out std_logic_vector (31 downto 0);
+     SrcAOut: out std_logic_vector (31 downto 0);
+     SrcBOut: out std_logic_vector (31 downto 0)
+   
+     
+         
 --     key_in: in std_logic;
 --     enc: in std_logic;
 --     dec: in std_logic;
@@ -153,7 +158,10 @@ else
 end if;
 end process;
 
-
-
+PCOut <= instr;
+ALURsultout <= ALUResult;
+ResultOut <= Result; 
+SrcAOut <= SrcA;
+SrcBOut <= SrcB;
 
 end Behavioral;
