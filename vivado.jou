@@ -18,3 +18,21 @@ import_files -norecurse {{C:/Users/l/Desktop/6463ADVHDes/code/VHDL w UCF-2017120
 update_compile_order -fileset sources_1
 current_project project_12
 close_project
+open_project C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.xpr
+update_compile_order -fileset sources_1
+current_project project_13
+current_project project_12
+current_project project_13
+current_project project_12
+current_project project_13
+current_project project_12
+current_project project_13
+current_project project_12
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file mkdir C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_instr.vhd w ]
+add_files -fileset sim_1 C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_instr.vhd
+update_compile_order -fileset sim_1
+close_project

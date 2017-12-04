@@ -26,7 +26,8 @@ ENTITY ALU IS
 		 PORT ( srcA : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
 				  srcB : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
 				  ALUControl: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
-				  ALUResult : OUT STD_LOGIC_VECTOR (31 DOWNTO 0));		
+				  ALUResult : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
+				  ALUZero: out std_logic);		
 END ALU;
 
 ARCHITECTURE Behavioral OF ALU IS
@@ -64,8 +65,8 @@ BEGIN
 			WHEN "010" => ooo <= op_1 AND op_2;
 			WHEN "011" => ooo <= op_1 OR op_2;
 			WHEN "100" => ooo <= op_1 NOR op_2;
-			WHEN "101" => ooo <= l_s;
-			WHEN "110" => ooo <= r_s;
+--			WHEN "101" => ooo <= l_s;
+--			WHEN "110" => ooo <= r_s;
 			WHEN OTHERS=> NULL;
 
 		END CASE;

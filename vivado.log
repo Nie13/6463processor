@@ -46,3 +46,40 @@ ERROR: [Common 17-180] Spawn failed: No error
 ERROR: [filemgmt 56-285] srcscanner execution failed with return code -1.
 current_project project_12
 close_project
+open_project C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+update_compile_order -fileset sources_1
+current_project project_13
+current_project project_12
+current_project project_13
+current_project project_12
+current_project project_13
+current_project project_12
+current_project project_13
+current_project project_12
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/l/Desktop/6463ADVHDes/code/project_13/project_13.srcs/sources_1/imports/VHDL w UCF/InstructionMem.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/l/Desktop/6463ADVHDes/code/project_13/project_13.srcs/sources_1/imports/VHDL w UCF/Adder.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/l/Desktop/6463ADVHDes/code/project_13/project_13.srcs/sources_1/imports/VHDL w UCF/main.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/l/Desktop/6463ADVHDes/code/project_13/project_13.srcs/sources_1/imports/VHDL w UCF/topdesign.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/6463processor-ALU/Full_Adder.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/IM.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/6463processor-ALU/Full_Adder.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/top.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/IM.vhd:]
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [filemgmt 56-285] srcscanner execution failed with return code -1.
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [filemgmt 56-285] srcscanner execution failed with return code -1.
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file mkdir C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_instr.vhd w ]
+add_files -fileset sim_1 C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_instr.vhd
+update_compile_order -fileset sim_1
+close_project
