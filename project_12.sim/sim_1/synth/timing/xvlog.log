@@ -1,0 +1,19 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.sim/sim_1/synth/timing/tb_processor_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAM32M_UNIQ_BASE_
+INFO: [VRFC 10-311] analyzing module RAM32M_HD12
+INFO: [VRFC 10-311] analyzing module RAM32M_HD13
+INFO: [VRFC 10-311] analyzing module RAM32M_HD14
+INFO: [VRFC 10-311] analyzing module RAM32M_HD15
+INFO: [VRFC 10-311] analyzing module RAM32M_HD16
+INFO: [VRFC 10-311] analyzing module RAM32M_HD17
+INFO: [VRFC 10-311] analyzing module RAM32M_HD18
+INFO: [VRFC 10-311] analyzing module RAM32M_HD19
+INFO: [VRFC 10-311] analyzing module RAM32M_HD20
+INFO: [VRFC 10-311] analyzing module RAM32M_HD21
+INFO: [VRFC 10-311] analyzing module RAM32M_HD22
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module DataMemoryModule
+INFO: [VRFC 10-311] analyzing module IM
+INFO: [VRFC 10-311] analyzing module registerfile
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-311] analyzing module glbl

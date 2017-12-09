@@ -175,9 +175,9 @@ begin
 --        end case;
         Instr <= data_mem(conv_integer(PCbar(31 downto 2)));
         PC <= PCbar;
-        PCPlus <= PCbar + 4;
+        PCPlus <= PCbar + 1;
         if (PCSrc = '0') then
-            PCbar <= PCbar + 4;
+            PCbar <= PCbar + 1;
         else
             PCbar <= PCBranch;
         end if;
