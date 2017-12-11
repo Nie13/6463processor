@@ -46,15 +46,14 @@ port (clk: in std_logic;
 end component;
 
 signal clk: std_logic;
-signal clkr: std_logic;
-signal PCout: std_logic_vector (31 downto 0);
+signal Instruction: std_logic_vector (31 downto 0);
 signal ALUResult:  std_logic_vector (31 downto 0);
-signal Resultout: std_logic_vector (31 downto 0);
-signal SrcAOut: std_logic_vector (31 downto 0);
-signal SrcBOut: std_logic_vector (31 downto 0);
+signal Write: std_logic_vector (31 downto 0);
+signal Rs: std_logic_vector (31 downto 0);
+signal Rt: std_logic_vector (31 downto 0);
 
 begin
-DUT: top port map (clk, PCout, ALUResult, Resultout, SrcAOut, SrcBOut);
+DUT: top port map (clk=>clk, PCout=>Instruction, ALURsultout=>ALUResult, Resultout=>Write, SrcAOut=>Rs, SrcBOut=>Rt);
 
 
 CLOCK: process
