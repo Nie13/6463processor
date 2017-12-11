@@ -56,6 +56,8 @@ begin
 	 with opcode select
 	   RegDst <= '1' when "000000",
 	       '0' when others;
+	       
+	   
 	 
 --	RegDst <= '1' when (opcode="000000" and funct="010000"|"010001"|"010010"|"010011"|"010100"),
 --				 '0' when others ;
