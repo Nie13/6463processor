@@ -182,7 +182,7 @@ PCBranch <= SignImm + PCPlus4;
 REGFILE: process(CLK)
 begin
     if (CLK'event and CLK = '1') then
-        SrcA <= registers(selA1);
+        SrcA <= registers(1);
         RD2 <= registers(selA2);
         WriteData <= registers(selA2);
         
