@@ -20,118 +20,137 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
-USE IEEE.NUMERIC_STD.ALL;
+use IEEE.std_logic_arith.all;
+--USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY ALU IS
-		 PORT ( srcA : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-				  srcB : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-				  ALUControl: IN STD_LOGIC_VECTOR (2 DOWNTO 0);
-				  ALUResult : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
-				  ALUZero: out std_logic;
-				  CLK: in std_logic);		
+		 PORT ( Oprand1, Oprand2: in std_logic_vector(31 downto 0);
+		        ALUOP: in std_logic_vector(2 downto 0);
+		        ALUResult: out std_logic_vector(31 downto 0));		
 END ALU;
 
 ARCHITECTURE Behavioral OF ALU IS
-
-	SIGNAL op_1: STD_LOGIC_VECTOR(31 DOWNTO 0)   := (OTHERS => '0');
-	SIGNAL op_2: STD_LOGIC_VECTOR(31 DOWNTO 0)   := (OTHERS => '0');
-	SIGNAL ooo : STD_LOGIC_VECTOR (31 DOWNTO 0)  := (OTHERS => '0');
-	signal boo: std_logic := '0';
+    signal LeftRotate, RightRotate: std_logic_vector(31 downto 0);
 BEGIN
-
+WITH Oprand2(4 DOWNTO 0) SELECT
+    LeftRotate<=	Oprand1(30 DOWNTO 0) & Oprand1(31) WHEN "00001",
+	Oprand1(29 DOWNTO 0) & Oprand1(31 DOWNTO 30) WHEN "00010",
+	Oprand1(28 DOWNTO 0) & Oprand1(31 DOWNTO 29) WHEN "00011",
+	Oprand1(27 DOWNTO 0) & Oprand1(31 DOWNTO 28) WHEN "00100",
+	Oprand1(26 DOWNTO 0) & Oprand1(31 DOWNTO 27) WHEN "00101",
+	Oprand1(25 DOWNTO 0) & Oprand1(31 DOWNTO 26) WHEN "00110",
+	Oprand1(24 DOWNTO 0) & Oprand1(31 DOWNTO 25) WHEN "00111",
+	Oprand1(23 DOWNTO 0) & Oprand1(31 DOWNTO 24) WHEN "01000",
+	Oprand1(22 DOWNTO 0) & Oprand1(31 DOWNTO 23) WHEN "01001",
+	Oprand1(21 DOWNTO 0) & Oprand1(31 DOWNTO 22) WHEN "01010",
+	Oprand1(20 DOWNTO 0) & Oprand1(31 DOWNTO 21) WHEN "01011",
+	Oprand1(19 DOWNTO 0) & Oprand1(31 DOWNTO 20) WHEN "01100",
+	Oprand1(18 DOWNTO 0) & Oprand1(31 DOWNTO 19) WHEN "01101",
+	Oprand1(17 DOWNTO 0) & Oprand1(31 DOWNTO 18) WHEN "01110",
+	Oprand1(16 DOWNTO 0) & Oprand1(31 DOWNTO 17) WHEN "01111",
+	Oprand1(15 DOWNTO 0) & Oprand1(31 DOWNTO 16) WHEN "10000",
+	Oprand1(14 DOWNTO 0) & Oprand1(31 DOWNTO 15) WHEN "10001",
+	Oprand1(13 DOWNTO 0) & Oprand1(31 DOWNTO 14) WHEN "10010",
+	Oprand1(12 DOWNTO 0) & Oprand1(31 DOWNTO 13) WHEN "10011",
+	Oprand1(11 DOWNTO 0) & Oprand1(31 DOWNTO 12) WHEN "10100",
+	Oprand1(10 DOWNTO 0) & Oprand1(31 DOWNTO 11) WHEN "10101",
+	Oprand1(9 DOWNTO 0) & Oprand1(31 DOWNTO 10) WHEN "10110",
+	Oprand1(8 DOWNTO 0) & Oprand1(31 DOWNTO 9) WHEN "10111",
+	Oprand1(7 DOWNTO 0) & Oprand1(31 DOWNTO 8) WHEN "11000",
+	Oprand1(6 DOWNTO 0) & Oprand1(31 DOWNTO 7) WHEN "11001",
+	Oprand1(5 DOWNTO 0) & Oprand1(31 DOWNTO 6) WHEN "11010",
+	Oprand1(4 DOWNTO 0) & Oprand1(31 DOWNTO 5) WHEN "11011",
+	Oprand1(3 DOWNTO 0) & Oprand1(31 DOWNTO 4) WHEN "11100",
+	Oprand1(2 DOWNTO 0) & Oprand1(31 DOWNTO 3) WHEN "11101",
+	Oprand1(1 DOWNTO 0) & Oprand1(31 DOWNTO 2) WHEN "11110",
+	Oprand1(0) & Oprand1(31 DOWNTO 1) WHEN "11111",
+	Oprand1 WHEN OTHERS;
+	
+WITH Oprand2(4 DOWNTO 0) SELECT
+        RightRotate<=    oprand1(0) & oprand1(31 DOWNTO 1)  WHEN "00001",
+        oprand1(1 DOWNTO 0) & oprand1(31 DOWNTO 2) WHEN "00010",
+        oprand1(2 DOWNTO 0) & oprand1(31 DOWNTO 3) WHEN "00011",
+        oprand1(3 DOWNTO 0) & oprand1(31 DOWNTO 4) WHEN "00100",
+        oprand1(4 DOWNTO 0) & oprand1(31 DOWNTO 5) WHEN "00101",
+        oprand1(5 DOWNTO 0) & oprand1(31 DOWNTO 6) WHEN "00110",
+        oprand1(6 DOWNTO 0) & oprand1(31 DOWNTO 7) WHEN "00111",
+        oprand1(7 DOWNTO 0) & oprand1(31 DOWNTO 8) WHEN "01000",
+        oprand1(8 DOWNTO 0) & oprand1(31 DOWNTO 9) WHEN "01001",
+        oprand1(9 DOWNTO 0) & oprand1(31 DOWNTO 10) WHEN "01010",
+        oprand1(10 DOWNTO 0) & oprand1(31 DOWNTO 11) WHEN "01011",
+        oprand1(11 DOWNTO 0) & oprand1(31 DOWNTO 12) WHEN "01100",
+        oprand1(12 DOWNTO 0) & oprand1(31 DOWNTO 13) WHEN "01101",
+        oprand1(13 DOWNTO 0) & oprand1(31 DOWNTO 14) WHEN "01110",
+        oprand1(14 DOWNTO 0) & oprand1(31 DOWNTO 15) WHEN "01111",
+        oprand1(15 DOWNTO 0) & oprand1(31 DOWNTO 16) WHEN "10000",
+        oprand1(16 DOWNTO 0) & oprand1(31 DOWNTO 17) WHEN "10001",
+        oprand1(17 DOWNTO 0) & oprand1(31 DOWNTO 18) WHEN "10010",
+        oprand1(18 DOWNTO 0) & oprand1(31 DOWNTO 19) WHEN "10011",
+        oprand1(19 DOWNTO 0) & oprand1(31 DOWNTO 20) WHEN "10100",
+        oprand1(20 DOWNTO 0) & oprand1(31 DOWNTO 21) WHEN "10101",
+        oprand1(21 DOWNTO 0) & oprand1(31 DOWNTO 22) WHEN "10110",
+        oprand1(22 DOWNTO 0) & oprand1(31 DOWNTO 23) WHEN "10111",
+        oprand1(23 DOWNTO 0) & oprand1(31 DOWNTO 24) WHEN "11000",
+        oprand1(24 DOWNTO 0) & oprand1(31 DOWNTO 25) WHEN "11001",
+        oprand1(25 DOWNTO 0) & oprand1(31 DOWNTO 26) WHEN "11010",
+        oprand1(26 DOWNTO 0) & oprand1(31 DOWNTO 27) WHEN "11011",
+        oprand1(27 DOWNTO 0) & oprand1(31 DOWNTO 28) WHEN "11100",
+        oprand1(28 DOWNTO 0) & oprand1(31 DOWNTO 29) WHEN "11101",
+        oprand1(29 DOWNTO 0) & oprand1(31 DOWNTO 30) WHEN "11110",
+        oprand1(30 DOWNTO 0) & oprand1(31) WHEN "11111",
+        oprand1 WHEN OTHERS;	
 --	op_1 <= srcA;
 --	op_2 <= srcB;
 --    ALUResult <= ooo;
 --    ALUZero <= boo;
-    
+ALUResult <= Oprand1 + Oprand2 when(ALUOP="001") else 
+             Oprand1 - Oprand2 when(ALUOP="010") else
+             Oprand1 and Oprand2 when(ALUOP="011") else
+             Oprand1 or Oprand2 when(ALUOP="100") else
+             Oprand1 nor Oprand2 when(ALUOP="101") else
+             LeftRotate when(ALUOP="110") else
+             RightRotate when(ALUOP="111") else
+             x"00000000";
 --    with ALUControl select
 --        ALUResult <= 
-    process (ALUControl, srcA, srcB)
-    begin
-    case ALUControl is
-        when "000" =>
-            ALUResult <= srcA + srcB;
-             ALUZero <= '0';
-        when "001" =>
-            ALUResult <= srcA - srcB;
-            if (srcA < srcB) then
-                ALUZero <= '1';
-             else
-                ALUZero <= '0';
-             end if;
-        when "010" => 
-            ALUResult <= srcA AND srcB;
-             ALUZero <= '0';
-        when "011" =>
-            ALUResult <= srcA OR srcB;
-             ALUZero <= '0';
-        when "100" =>
-            ALUResult <= srcA NOR srcB;
-             ALUZero <= '0';
-        when "101" =>
-            if (srcA = srcB) then
-                ALUZero <= '1';
-            else
-                ALUZero <= '0';
-            end if;
-         when "110" =>
-             if NOT (srcA = srcB) then
-                 ALUZero <= '1';
-             else
-                 ALUZero <= '0';
-             end if;
-          when others =>
-            NULL;
-        end case;
-    end process; 
---	PROCESS (CLK) 
---	BEGIN
-		
-----		CASE ALUControl IS
-
-----			WHEN "000" => ooo <= op_1 + op_2;
-----			WHEN "001" => ooo <= op_1 - op_2;
-----			WHEN "010" => ooo <= op_1 AND op_2;
-----			WHEN "011" => ooo <= op_1 OR op_2;
-----			WHEN "100" => ooo <= op_1 NOR op_2;
-----			WHEN OTHERS=> NULL;
-
-----		END CASE;
---if (CLK'event and CLK = '1') then
---		-- code x09
---		if (ALUControl= "000") then
---		  ooo<= op_1 + op_2;
---		elsif (ALUControl = "010") then
---		  ooo<= op_1 AND op_2;
---		elsif (ALUControl = "011") then
---		  ooo<=op_1 OR op_2;
---		elsif (ALUControl = "100") then
---		  ooo <= op_1 NOR op_2;
---		elsif (ALUControl = "001") then
---		  ooo <= op_1 - op_2;
---		  if (op_1 < op_2) then
---		      boo <= '1';
---		   else
---		      boo <= '0';
---		   end if;
---		 -- code x0A
---		elsif (ALUControl = "101") then
---		  if (op_1 = op_2) then
---		      boo <= '1';
---		  else
---		      boo <= '0';
---		  end if;
---		  -- code x0B
---		  elsif (ALUControl = "110") then
---		      if not(op_1 = op_2) then
---		          boo <= '1';
---		      else
---		          boo <= '0';
---		      end if;
-		      
---		end if;
---end if;
---	END PROCESS;
+--    process (ALUControl, srcA, srcB)
+--    begin
+--    case ALUControl is
+--        when "000" =>
+--            ALUResult <= srcA + srcB;
+--             ALUZero <= '0';
+--        when "001" =>
+--            ALUResult <= srcA - srcB;
+--            if (srcA < srcB) then
+--                ALUZero <= '1';
+--             else
+--                ALUZero <= '0';
+--             end if;
+--        when "010" => 
+--            ALUResult <= srcA AND srcB;
+--             ALUZero <= '0';
+--        when "011" =>
+--            ALUResult <= srcA OR srcB;
+--             ALUZero <= '0';
+--        when "100" =>
+--            ALUResult <= srcA NOR srcB;
+--             ALUZero <= '0';
+--        when "101" =>
+--            if (srcA = srcB) then
+--                ALUZero <= '1';
+--            else
+--                ALUZero <= '0';
+--            end if;
+--         when "110" =>
+--             if NOT (srcA = srcB) then
+--                 ALUZero <= '1';
+--             else
+--                 ALUZero <= '0';
+--             end if;
+--          when others =>
+--            NULL;
+--        end case;
+--    end process; 
 			 
 
 	

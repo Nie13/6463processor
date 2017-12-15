@@ -31,36 +31,29 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Decoder is
 	port(
-		opcode, funct: in std_logic_vector(5 downto 0);
-		MemtoReg,MemWrite,ALUSrc,RegDst,RegWrite,JMP: out std_logic;
-		branch : out std_logic_vector(1 downto 0);
-		ALUop: out std_logic_vector(2 downto 0)
+		instruction: in std_logic_vector(31 downto 0);
+        wrtEnable, isload, isStore, Itype, JMP: out std_logic;
+        branch : out std_logic_vector(1 downto 0);
+        ALUOP: out std_logic_vector(2 downto 0)
 	);
 end Decoder;
 
 architecture Behavioral of Decoder is
+signal opcode: std_logic_vector(5 downto 0);
 begin
+opcode <= instruction(31 downto 26);
 	with opcode select
-		RegWrite <= '0' when "001000"| "001001" |"001010"|"001011"|"001100"|"111111",
+		wrtEnable <= '0' when "001000"| "001001" |"001010"|"001011"|"001100"|"111111",
 						'1' when others;
 	with opcode select
-		MemtoReg <= '1' when "000111",
-					   '0' when others;
+		isload <= '1' when "000111",
+					 '0' when others;
 	with opcode select
-		MemWrite <= '1' when "001000",
+		isstore <= '1' when "001000",
 						'0' when others;
 	with opcode select
-		ALUSrc <= '1' when "000001"|"000010"|"000011"|"000111"|"001000",
-					 '0' when others;
-	
-	 with opcode select
-	   RegDst <= '1' when "000000",
-	       '0' when others;
-	       
-	   
-	 
---	RegDst <= '1' when (opcode="000000" and funct="010000"|"010001"|"010010"|"010011"|"010100"),
---				 '0' when others ;
+		Itype <= '1' when "000001"|"000010"|"000011"|"000100"|"000101"|"000110"|"000111"|"001000"|"001001"|"001010"|"001011",
+					'0' when others;
 	with opcode select 
 		JMP <= '1' when "001100",
 				  '0' WHEN others;
@@ -69,22 +62,19 @@ begin
 					"10" when "001010",
 					"11" when "001011",
 					"00" when others;
-	ALUop <= "000" when(opcode = "000000" and funct="010000") else
-				"000" when(opcode = "000001") else
-				"000" when(opcode = "000111") else
-				"000" when(opcode = "001000") else
-				"001" when(opcode = "000000" and funct="010001") else
-				"001" when(opcode = "000010") else
-				"010" when(opcode = "000000" and funct="010010") else
-				"010" when(opcode = "000011") else			
-				"011" when(opcode = "000100") else			
-				"011" when(opcode = "000000" and funct="010011") else
-				"100" when(opcode = "000000" and funct="010100") else
-				"001" when(opcode = "001001") else
-				"101" when(opcode = "001010") else
-				"110" when(opcode = "001011") else
---				"110" when(opcode = "000101") else
---				"111" when(opcode = "000110") else
-				"111";
+	ALUOP <= "001" when(opcode = "000000" and instruction(5 downto 0)="010000") else
+				"001" when(opcode = "000001") else
+				"001" when(opcode = "000111") else
+				"001" when(opcode = "001000") else
+				"010" when(opcode = "000000" and instruction(5 downto 0)="010001") else
+				"010" when(opcode = "000010") else
+				"011" when(opcode = "000000" and instruction(5 downto 0)="010010") else
+				"011" when(opcode = "000011") else			
+				"100" when(opcode = "000100") else			
+				"100" when(opcode = "000000" and instruction(5 downto 0)="010011") else
+				"101" when(opcode = "000000" and instruction(5 downto 0)="010100") else
+				"110" when(opcode = "000101") else
+				"111" when(opcode = "000110") else
+				"000";
 end Behavioral;
 
