@@ -1,2 +1,5 @@
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_processor.vhd" into library xil_defaultlib
+ERROR: [VRFC 10-149] 'final' is not compiled in library xil_defaultlib [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_processor.vhd:25]
 INFO: [VRFC 10-307] analyzing entity tb_processor
+ERROR: [VRFC 10-1504] unit tb_processor ignored due to previous errors [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_processor.vhd:36]
+INFO: [VRFC 10-240] VHDL file C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sim_1/new/tb_processor.vhd ignored due to errors

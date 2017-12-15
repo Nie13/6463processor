@@ -1,0 +1,18 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/imports/6463processor-ALU/ALU.vhd"
+vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/new/Decoder.vhd"
+vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/new/IM.vhd"
+vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/new/PC.vhd"
+vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/new/PCMUX.vhd"
+vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/new/adder.vhd"
+vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/new/comparator.vhd"
+vhdl work  "../../../project_12.srcs/sources_1/new/final_pkg.vhd"
+vhdl work  "../../../project_12.srcs/sources_1/imports/new/datamem.vhd"
+vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/new/mux.vhd"
+vhdl work  "../../../project_12.srcs/sources_1/imports/new/registerfile.vhd"
+vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/new/signextend.vhd"
+vhdl work  "../../../project_12.srcs/sources_1/imports/new/top.vhd"
+vhdl work  "../../../project_12.srcs/sim_1/new/tb_processor.vhd"
+
+# Do not sort compile order
+nosort

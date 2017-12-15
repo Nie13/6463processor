@@ -1,6 +1,6 @@
 Vivado Simulator 2017.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 4253e82b31da472ea40b36bcc7c0ae83 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot tb_register_behav xil_defaultlib.tb_register -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 4253e82b31da472ea40b36bcc7c0ae83 --debug typical --relax --mt 2 -L xil_defaultlib -L work -L secureip -L xpm --snapshot tb_processor_behav work.tb_processor -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -11,8 +11,22 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
+Compiling package work.final
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
-Compiling architecture behavioral of entity xil_defaultlib.registerfile [registerfile_default]
-Compiling architecture behavioral of entity xil_defaultlib.tb_register
-Built simulation snapshot tb_register_behav
+Compiling package ieee.std_logic_textio
+Compiling architecture behavioral of entity xil_defaultlib.Decoder [decoder_default]
+Compiling architecture behavioral of entity work.registerfile [registerfile_default]
+Compiling architecture behavioral of entity xil_defaultlib.IM [im_default]
+Compiling architecture behavioral of entity work.DataMemoryModule [datamemorymodule_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.comparator [comparator_default]
+Compiling architecture behavioral of entity xil_defaultlib.adder [adder_default]
+Compiling architecture behavioral of entity xil_defaultlib.PC [pc_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux [\mux(n=5)\]
+Compiling architecture behavioral of entity xil_defaultlib.mux [\mux(n=32)\]
+Compiling architecture behavioral of entity xil_defaultlib.PCMUX [pcmux_default]
+Compiling architecture behavioral of entity xil_defaultlib.signextend [signextend_default]
+Compiling architecture behavioral of entity work.top [top_default]
+Compiling architecture behavioral of entity work.tb_processor
+Built simulation snapshot tb_processor_behav

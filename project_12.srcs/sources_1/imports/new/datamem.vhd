@@ -1,77 +1,104 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
-use IEEE.NUMERIC_STD.ALL;
+use IEEE.std_logic_arith.all;
+
+use work.final.all;
 
 entity DataMemoryModule is
-		 port ( InputAddr : in STD_LOGIC_VECTOR(31 downto 0):=(others => '0');					
-				  WriteData  : in STD_LOGIC_VECTOR (31 downto 0);
-				  ReadEnable : in STD_LOGIC;
-				  WriteEnable : in STD_LOGIC;
-				  Clk : in STD_LOGIC;
---				  Reset : in STD_LOGIC;
-				  OutputData : out STD_LOGIC_VECTOR (31 downto 0):= (others => '0'));
+		 port ( address, WriteData: in STD_LOGIC_VECTOR (31 downto 0);
+		WriteMem, ReadMem,Clk: in STD_LOGIC;
+		ReadData: out STD_LOGIC_VECTOR (31 downto 0);
+		key_in: in std_logic;
+		memdata: out mem_array;
+		ukey: in std_logic_vector(127 downto 0));
 end DataMemoryModule;
 
 architecture Behavioral of DataMemoryModule is
 
-	type RAM is array (0 to 63) of STD_LOGIC_VECTOR (31 downto 0);
-	SIGNAL data_mem: RAM:= (others => (others => '0'));
-	signal ReadData: std_logic_vector (31 downto 0):= x"00000000";
-	
+--	type RAM is array (0 to 63) of STD_LOGIC_VECTOR (31 downto 0);
+signal data_mem: mem_array := (
+		x"b7e15163", 
+		x"5618cb1c", 
+		x"f45044d5",
+		x"9287be8e",
+		x"30bf3847",
+		x"cef6b200",
+		x"6d2e2bb9",
+		x"0b65a572",
+		x"a99d1f2b",
+		x"47d498e4",
+		x"e60c129d",
+		x"84438c56",
+		x"227b060f",
+		x"c0b27fc8",
+		x"5ee9f981",
+		x"fd21733a",
+		x"9b58ecf3",
+		x"399066ac",
+		x"d7c7e065",
+		x"75ff5a1e",
+		x"1436d3d7",
+		x"b26e4d90",
+		x"50a5c749",
+		x"eedd4102",
+		x"8d14babb",
+		x"2b4c3474", 
+		X"00000000", 
+		X"00000000", 
+		X"00000000", 
+		X"00000000", --30
+		X"00000000", 
+		X"00000000");
 
 begin
-    OutputData <= ReadData;
-	process (Clk) begin
-		--if (rising_edge(Clk)) then
---			if (Reset='1') then 
---				data_mem <= (	x"00000000", x"00000000", x"00000000", x"00000000",
---										x"00000000", x"00000000", x"00000000", x"00000000",
---										x"00000000", x"00000000", x"9BBBD8C8", x"1A37F7FB", 
---										x"46F8E8C5", x"460C6085", x"70F83B8A", x"284B8303", 
---										x"513E1454", x"F621ED22", x"3125065D", x"11A83A5D", 
---										x"D427686B", x"713AD82D", x"4B792F99", x"2799A4DD", 
---										x"A7901C49", x"DEDE871A", x"36C03196", x"A7EFC249", 
---										x"61A78BB8", x"3B0A1D2B", x"4DBFCA76", x"AE162167", 
---										x"30D76B0A", x"43192304", x"F6CC1431", x"65046380", 
---										x"00000000", x"00000000", x"ABCDEF01", x"FF00FF00", 
---										x"97FFC053", x"0841727E", x"00000000", x"00000000",
---										x"00000000", x"00000000", x"00000000", x"00000000",
---										x"00000000", x"00000000", x"00000000", x"00000000",
---										x"00000000", x"00000000", x"00000000", x"00000000",
---										x"00000000", x"00000000", x"00000000", x"00000000",
---										x"00000000", x"00000000", x"00000000", x"00000000");
-			-- idk y this part is here
-			if (Clk'event and Clk = '1') then
---			    ReadData <= data_mem(CONV_INTEGER(InputAddr));
-				if (WriteEnable = '1') then
-				    data_mem(CONV_INTEGER(InputAddr)) <= WriteData;				    
-				end if;
-				if (ReadEnable = '1') then
-				   ReadData <= data_mem(CONV_INTEGER(InputAddr));
-				else
-				    ReadData <= InputAddr;
-				end if;
---				with ReadEnable select
---                       OutputData <= ReadData when '1',
---                                   InputAddr when others;
-			
---				if(WriteEnable = '1' and ReadEnable = '1') then
---					OutputData <= WriteData;
---					data_mem(CONV_INTEGER(InputAddr)) <= WriteData;
---				elsif(WriteEnable='1') then		
---					data_mem(CONV_INTEGER(InputAddr)) <= WriteData;
---				elsif (ReadEnable='1') then
---					OutputData <= data_mem(CONV_INTEGER(InputAddr));	 			
---				end if;
-			end if;
-		--end if;	
-	end process;
+
+with ReadMem select
+	ReadData <= data_mem(conv_integer(address)) when '1',
+					X"00000000" when others;
+memdata <= data_mem;
+mem_process: process(address, WriteData,clk, key_in)
+begin
+	if(key_in = '1') then 
+		data_mem(0)<=  x"b7e15163"; 
+		data_mem(1)<=  x"5618cb1c"; 
+		data_mem(2)<=  x"f45044d5";
+		data_mem(3)<=  x"9287be8e";
+		data_mem(4)<=  x"30bf3847";
+		data_mem(5)<=  x"cef6b200";
+		data_mem(6)<=  x"6d2e2bb9";
+		data_mem(7)<=  x"0b65a572";
+		data_mem(8)<=  x"a99d1f2b";
+		data_mem(9)<=  x"47d498e4";
+		data_mem(10)<=  x"e60c129d";
+		data_mem(11)<=  x"84438c56";
+		data_mem(12)<=  x"227b060f";
+		data_mem(13)<=  x"c0b27fc8";
+		data_mem(14)<=  x"5ee9f981";
+		data_mem(15)<=  x"fd21733a";
+		data_mem(16)<=  x"9b58ecf3";
+		data_mem(17)<=  x"399066ac";
+		data_mem(18)<=  x"d7c7e065";
+		data_mem(19)<=  x"75ff5a1e";
+		data_mem(20)<=  x"1436d3d7";
+		data_mem(21)<=  x"b26e4d90";
+		data_mem(22)<=  x"50a5c749";
+		data_mem(23)<=  x"eedd4102";
+		data_mem(24)<=  x"8d14babb";
+		data_mem(25)<=  x"2b4c3474"; 
+		data_mem(26) <= ukey(31 downto 0);
+		data_mem(27) <= ukey(63 downto 32);
+		data_mem(28) <= ukey(95 downto 64);
+		data_mem(29) <= ukey(127 downto 96);
+		data_mem(30)<=  x"00000000"; 
+		data_mem(31)<=  x"00000000"; 
 	
---	with ReadEnable select
---	   OutputData <= ReadData when '1',
---	               InputAddr when others;
-	               
+	elsif (clk'event and clk = '1') then
+		if (WriteMem = '1') then
+			data_mem(conv_integer(address)) <= WriteData;
+		end if;
+	end if;
+end process mem_process;
 
 --	process (ReadEnable, data_mem, InputAddr) begin
 --		if (ReadEnable='1') then
