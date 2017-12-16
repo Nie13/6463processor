@@ -1,0 +1,86 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Fri Dec 15 12:31:10 2017
+# Process ID: 844
+# Current directory: C:/Users/l/Desktop/6463ADVHDes/code/project_12
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17356 C:\Users\l\Desktop\6463ADVHDes\code\project_12\project_12.xpr
+# Log file: C:/Users/l/Desktop/6463ADVHDes/code/project_12/vivado.log
+# Journal file: C:/Users/l/Desktop/6463ADVHDes/code/project_12\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 760.555 ; gain = 16.992
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Fri Dec 15 12:39:25 2017] Launched synth_1...
+Run output will be captured here: C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+INFO: [Netlist 29-17] Analyzing 260 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:7]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:13]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:14]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:15]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:16]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:17]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:18]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:19]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:20]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:21]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:22]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:23]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:24]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:25]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:26]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:27]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:28]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:35]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:36]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:37]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:38]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:39]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:42]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:43]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:70]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:71]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:72]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:73]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:74]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:75]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:76]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:79]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:80]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:81]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:82]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:83]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:84]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:85]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:86]
+Finished Parsing XDC File [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 60 instances were transformed.
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 50 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 10 instances
+
+open_run: Time (s): cpu = 00:00:36 ; elapsed = 00:00:26 . Memory (MB): peak = 1122.012 ; gain = 311.023
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 1122.012 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 1122.012 ; gain = 0.000
+close_design
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 15 13:42:31 2017...

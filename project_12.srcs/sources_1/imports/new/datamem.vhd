@@ -18,43 +18,76 @@ architecture Behavioral of DataMemoryModule is
 
 --	type RAM is array (0 to 63) of STD_LOGIC_VECTOR (31 downto 0);
 signal data_mem: mem_array := (
-		x"b7e15163", 
-		x"5618cb1c", 
-		x"f45044d5",
-		x"9287be8e",
-		x"30bf3847",
-		x"cef6b200",
-		x"6d2e2bb9",
-		x"0b65a572",
-		x"a99d1f2b",
-		x"47d498e4",
-		x"e60c129d",
-		x"84438c56",
-		x"227b060f",
-		x"c0b27fc8",
-		x"5ee9f981",
-		x"fd21733a",
-		x"9b58ecf3",
-		x"399066ac",
-		x"d7c7e065",
-		x"75ff5a1e",
-		x"1436d3d7",
-		x"b26e4d90",
-		x"50a5c749",
-		x"eedd4102",
-		x"8d14babb",
-		x"2b4c3474", 
+        x"00000000", 
+		x"00000000", 
+		x"00000000",
+		x"00000000",
+        x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000",
+		x"00000000", 
 		X"00000000", 
 		X"00000000", 
 		X"00000000", 
 		X"00000000", --30
 		X"00000000", 
-		X"00000000");
+		X"00000000"
+--		x"b7e15163", 
+--		x"5618cb1c", 
+--		x"f45044d5",
+--		x"9287be8e",
+--		x"30bf3847",
+--		x"cef6b200",
+--		x"6d2e2bb9",
+--		x"0b65a572",
+--		x"a99d1f2b",
+--		x"47d498e4",
+--		x"e60c129d",
+--		x"84438c56",
+--		x"227b060f",
+--		x"c0b27fc8",
+--		x"5ee9f981",
+--		x"fd21733a",
+--		x"9b58ecf3",
+--		x"399066ac",
+--		x"d7c7e065",
+--		x"75ff5a1e",
+--		x"1436d3d7",
+--		x"b26e4d90",
+--		x"50a5c749",
+--		x"eedd4102",
+--		x"8d14babb",
+--		x"2b4c3474", 
+--		X"00000000", 
+--		X"00000000", 
+--		X"00000000", 
+--		X"00000000", --30
+--		X"00000000", 
+--		X"00000000"
+);
 
 begin
 
 with ReadMem select
-	ReadData <= data_mem(conv_integer(address)) when '1',
+	ReadData <= data_mem(conv_integer(address(4 downto 0))) when '1',
 					X"00000000" when others;
 memdata <= data_mem;
 mem_process: process(address, WriteData,clk, key_in)
@@ -95,7 +128,7 @@ begin
 	
 	elsif (clk'event and clk = '1') then
 		if (WriteMem = '1') then
-			data_mem(conv_integer(address)) <= WriteData;
+			data_mem(conv_integer(address(4 downto 0))) <= WriteData;
 		end if;
 	end if;
 end process mem_process;
