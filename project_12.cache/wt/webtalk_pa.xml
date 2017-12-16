@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sat Dec 16 12:09:23 2017">
+<application name="pa" timeStamp="Sat Dec 16 12:14:47 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="d808909cdbde45268463a62edac7a307" type="ProjectID"/>
 <property name="ProjectIteration" value="2" type="ProjectIteration"/>
@@ -212,9 +212,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="XdcEditorView_APPLY_ALL_CHANGES_TO_XDC_CONSTRAINTS" value="4" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="69" type="GuiMode"/>
+<property name="GuiMode" value="70" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="60" type="TclMode"/>
+<property name="TclMode" value="61" type="TclMode"/>
 </item>
 </section>
 </application>
