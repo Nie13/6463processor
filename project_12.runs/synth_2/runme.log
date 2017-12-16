@@ -1,0 +1,817 @@
+
+*** Running vivado
+    with args -log topdesign.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source topdesign.tcl
+
+
+****** Vivado v2017.2 (64-bit)
+  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source topdesign.tcl -notrace
+Command: synth_design -top topdesign -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 18552 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 323.609 ; gain = 78.082
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'topdesign' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/topdesign.vhd:52]
+INFO: [Synth 8-3491] module 'top' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:36' bound to instance 'rc5totalDesign' of component 'top' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/topdesign.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'top' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:55]
+INFO: [Synth 8-3491] module 'Decoder' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/Decoder.vhd:32' bound to instance 'decode' of component 'Decoder' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:186]
+INFO: [Synth 8-638] synthesizing module 'Decoder' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/Decoder.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'Decoder' (1#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/Decoder.vhd:41]
+INFO: [Synth 8-3491] module 'registerfile' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/registerfile.vhd:38' bound to instance 'registerfi' of component 'registerfile' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:188]
+INFO: [Synth 8-638] synthesizing module 'registerfile' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/registerfile.vhd:50]
+WARNING: [Synth 8-614] signal 'AB' is read in the process but is not in the sensitivity list [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/registerfile.vhd:97]
+WARNING: [Synth 8-614] signal 'key_in' is read in the process but is not in the sensitivity list [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/registerfile.vhd:97]
+INFO: [Synth 8-256] done synthesizing module 'registerfile' (2#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/registerfile.vhd:50]
+INFO: [Synth 8-3491] module 'IM' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/IM.vhd:34' bound to instance 'instrmemory' of component 'IM' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:190]
+INFO: [Synth 8-638] synthesizing module 'IM' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/IM.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'IM' (3#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/IM.vhd:62]
+INFO: [Synth 8-3491] module 'DataMemoryModule' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/datamem.vhd:8' bound to instance 'datamemo' of component 'DataMemoryModule' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:192]
+INFO: [Synth 8-638] synthesizing module 'DataMemoryModule' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/datamem.vhd:17]
+WARNING: [Synth 8-614] signal 'ukey' is read in the process but is not in the sensitivity list [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/datamem.vhd:93]
+INFO: [Synth 8-256] done synthesizing module 'DataMemoryModule' (4#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/datamem.vhd:17]
+INFO: [Synth 8-3491] module 'ALU' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/6463processor-ALU/ALU.vhd:26' bound to instance 'alumodule' of component 'ALU' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:194]
+INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/6463processor-ALU/ALU.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (5#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/6463processor-ALU/ALU.vhd:32]
+INFO: [Synth 8-3491] module 'comparator' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/comparator.vhd:35' bound to instance 'comparator1' of component 'Comparator' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:196]
+INFO: [Synth 8-638] synthesizing module 'comparator' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/comparator.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'comparator' (6#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/comparator.vhd:43]
+INFO: [Synth 8-3491] module 'adder' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/adder.vhd:35' bound to instance 'PCadder' of component 'Adder' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:198]
+INFO: [Synth 8-638] synthesizing module 'adder' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/adder.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'adder' (7#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/adder.vhd:41]
+INFO: [Synth 8-3491] module 'PC' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/PC.vhd:35' bound to instance 'PC1' of component 'PC' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:200]
+INFO: [Synth 8-638] synthesizing module 'PC' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/PC.vhd:45]
+WARNING: [Synth 8-614] signal 'address' is read in the process but is not in the sensitivity list [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/PC.vhd:51]
+WARNING: [Synth 8-614] signal 's1' is read in the process but is not in the sensitivity list [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/PC.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'PC' (8#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/PC.vhd:45]
+INFO: [Synth 8-3491] module 'adder' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/adder.vhd:35' bound to instance 'BranchAdder' of component 'Adder' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:202]
+	Parameter n bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'mux' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/mux.vhd:35' bound to instance 'WrtRegMux' of component 'mux' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:204]
+INFO: [Synth 8-638] synthesizing module 'mux' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/mux.vhd:44]
+	Parameter n bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mux' (9#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/mux.vhd:44]
+	Parameter n bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'mux' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/mux.vhd:35' bound to instance 'Oprand2Mux' of component 'mux' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:206]
+INFO: [Synth 8-638] synthesizing module 'mux__parameterized1' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/mux.vhd:44]
+	Parameter n bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mux__parameterized1' (9#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/mux.vhd:44]
+INFO: [Synth 8-3491] module 'PCMUX' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/PCMUX.vhd:34' bound to instance 'PCMUX1' of component 'PCMUX' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:208]
+INFO: [Synth 8-638] synthesizing module 'PCMUX' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/PCMUX.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'PCMUX' (10#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/PCMUX.vhd:42]
+	Parameter n bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'mux' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/mux.vhd:35' bound to instance 'ALU_DataMem_MUX' of component 'mux' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:210]
+INFO: [Synth 8-3491] module 'signextend' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/signextend.vhd:35' bound to instance 'SignExtend1' of component 'SignExtend' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:212]
+INFO: [Synth 8-638] synthesizing module 'signextend' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/signextend.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'signextend' (11#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/signextend.vhd:41]
+WARNING: [Synth 8-6014] Unused sequential element s_reg was removed.  [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:227]
+INFO: [Synth 8-256] done synthesizing module 'top' (12#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/top.vhd:55]
+INFO: [Synth 8-3491] module 'rc5_segmentdriver' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/rc5_segmentdriver.vhd:36' bound to instance 'rc5_segment' of component 'rc5_segmentdriver' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/topdesign.vhd:169]
+INFO: [Synth 8-638] synthesizing module 'rc5_segmentdriver' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/rc5_segmentdriver.vhd:43]
+INFO: [Synth 8-3491] module 'segmentdecoder' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/segmentdecoder.vhd:34' bound to instance 'uut' of component 'segmentdecoder' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/rc5_segmentdriver.vhd:65]
+INFO: [Synth 8-638] synthesizing module 'segmentdecoder' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/segmentdecoder.vhd:45]
+INFO: [Synth 8-226] default block is never used [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/segmentdecoder.vhd:52]
+WARNING: [Synth 8-6014] Unused sequential element decode_data_reg was removed.  [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/segmentdecoder.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'segmentdecoder' (13#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/segmentdecoder.vhd:45]
+INFO: [Synth 8-3491] module 'clock_divider' declared at 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/clock_divider.vhd:36' bound to instance 'uut1' of component 'clock_divider' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/rc5_segmentdriver.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'clock_divider' [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/clock_divider.vhd:43]
+WARNING: [Synth 8-614] signal 'enable' is read in the process but is not in the sensitivity list [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/clock_divider.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'clock_divider' (14#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/clock_divider.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'rc5_segmentdriver' (15#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/rc5_segmentdriver.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'topdesign' (16#1) [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/topdesign.vhd:52]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[31]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[30]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[29]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[28]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[27]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[26]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[25]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[24]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[23]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[22]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[21]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[20]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[19]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[18]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[17]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[16]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[15]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[14]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[13]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[12]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[11]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[10]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[9]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[8]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[7]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[6]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[5]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[31]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[30]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[29]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[28]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[27]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[26]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[25]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[24]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[23]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[22]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[21]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[20]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[19]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[18]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[17]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[16]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[15]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[14]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[13]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[12]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[11]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[1]
+WARNING: [Synth 8-3331] design IM has unconnected port ReadAddress[0]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[31]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[30]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[29]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[28]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[27]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[26]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[25]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[24]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[23]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[22]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[21]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[20]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[19]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[18]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[17]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[16]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[15]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[14]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[13]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[12]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[11]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[10]
+WARNING: [Synth 8-3331] design IM has unconnected port changeAddress[9]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[25]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[24]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[23]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[22]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[21]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[20]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[19]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[18]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[17]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[16]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[15]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[14]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[13]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[12]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[11]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[10]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[9]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[8]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[7]
+WARNING: [Synth 8-3331] design Decoder has unconnected port instruction[6]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 366.695 ; gain = 121.168
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 366.695 ; gain = 121.168
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:1]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:2]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:3]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:4]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:5]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:8]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:9]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:11]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:12]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:13]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:14]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:15]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:16]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:17]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:19]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:20]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:21]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:22]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:23]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:24]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:25]
+CRITICAL WARNING: [Designutils 20-1307] Command 'NET' is not supported in the xdc constraint file. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:75]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:75]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:76]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:76]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:78]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:78]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:79]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:79]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:81]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:81]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc:82]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/constrs_1/new/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/topdesign_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/topdesign_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 692.953 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 692.953 ; gain = 447.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 692.953 ; gain = 447.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 692.953 ; gain = 447.426
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "wrtEnable" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "isload" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "isStore" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Itype" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "JMP" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "branch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg_mem_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_mem_reg[31]" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element count_reg was removed.  [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/clock_divider.vhd:50]
+INFO: [Synth 8-5545] ROM "s1" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "c1" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "timer1" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "s2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "c2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "timer2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "data_clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "s3" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "timer3" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "s4" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "c4" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "timer4" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "s5" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "c5" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "timer5" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 692.953 ; gain = 447.426
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 17    
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	              128 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 77    
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 13    
++---Muxes : 
+	   4 Input    128 Bit        Muxes := 1     
+	   4 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 25    
+	   4 Input     32 Bit        Muxes := 7     
+	   2 Input      5 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 6     
+	   3 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 6     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 98    
+	   8 Input      1 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module topdesign 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 14    
++---Registers : 
+	              128 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 12    
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input    128 Bit        Muxes := 1     
+	   4 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 6     
+	   4 Input     32 Bit        Muxes := 6     
+	   4 Input      2 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 16    
+	   5 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 9     
+Module Decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 6     
+	   3 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module registerfile 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 33    
+Module DataMemoryModule 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 32    
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module comparator 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+Module PC 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 9     
+Module mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module mux__parameterized1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module PCMUX 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module top 
+Detailed RTL Component Info : 
++---Muxes : 
+	   3 Input      2 Bit        Muxes := 1     
+Module rc5_segmentdriver 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   8 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element uut1/count_reg was removed.  [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/new/clock_divider.vhd:50]
+INFO: [Synth 8-5545] ROM "timer3" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "data_clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element timer2_reg was removed.  [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/topdesign.vhd:234]
+WARNING: [Synth 8-6014] Unused sequential element timer1_reg was removed.  [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/topdesign.vhd:209]
+WARNING: [Synth 8-6014] Unused sequential element timer5_reg was removed.  [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/topdesign.vhd:328]
+WARNING: [Synth 8-6014] Unused sequential element timer4_reg was removed.  [C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.srcs/sources_1/imports/new/topdesign.vhd:303]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[31]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[30]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[29]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[28]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[27]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[26]
+WARNING: [Synth 8-3331] design DataMemoryModule has unconnected port address[25]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[31]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[30]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[29]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[28]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[27]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[26]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[25]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[24]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[23]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[22]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[21]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[20]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[19]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[18]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[17]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[16]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[15]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[14]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[13]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[12]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[11]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[10]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (changeAddress_reg[9]) is unused and will be removed from module topdesign.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:54 ; elapsed = 00:01:54 . Memory (MB): peak = 692.953 ; gain = 447.426
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++---------------+--------------------------+-----------+----------------------+------------------------------+
+|Module Name    | RTL Object               | Inference | Size (Depth x Width) | Primitives                   | 
++---------------+--------------------------+-----------+----------------------+------------------------------+
+|rc5totalDesign | instrmemory/data_mem_reg | Implied   | 512 x 32             | RAM64X1D x 10  RAM64M x 50   | 
++---------------+--------------------------+-----------+----------------------+------------------------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:08 ; elapsed = 00:02:09 . Memory (MB): peak = 708.367 ; gain = 462.840
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:48 ; elapsed = 00:02:50 . Memory (MB): peak = 726.523 ; gain = 480.996
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (rc5totalDesign/PC1/address_reg[1]) is unused and will be removed from module topdesign.
+WARNING: [Synth 8-3332] Sequential element (rc5totalDesign/PC1/address_reg[0]) is unused and will be removed from module topdesign.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:03:21 ; elapsed = 00:03:23 . Memory (MB): peak = 747.297 ; gain = 501.770
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:03:22 ; elapsed = 00:03:24 . Memory (MB): peak = 747.297 ; gain = 501.770
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:22 ; elapsed = 00:03:24 . Memory (MB): peak = 747.297 ; gain = 501.770
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:23 ; elapsed = 00:03:25 . Memory (MB): peak = 747.297 ; gain = 501.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:24 ; elapsed = 00:03:25 . Memory (MB): peak = 747.297 ; gain = 501.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:24 ; elapsed = 00:03:26 . Memory (MB): peak = 747.297 ; gain = 501.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:24 ; elapsed = 00:03:26 . Memory (MB): peak = 747.297 ; gain = 501.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |   178|
+|3     |LUT1     |   348|
+|4     |LUT2     |   510|
+|5     |LUT3     |   616|
+|6     |LUT4     |   275|
+|7     |LUT5     |   195|
+|8     |LUT6     |  1729|
+|9     |MUXF7    |   685|
+|10    |MUXF8    |   136|
+|11    |RAM64M   |    50|
+|12    |RAM64X1D |    10|
+|13    |FDCE     |  1633|
+|14    |FDPE     |   607|
+|15    |FDRE     |   620|
+|16    |FDSE     |     8|
+|17    |LDC      |   192|
+|18    |IBUF     |    22|
+|19    |OBUF     |    17|
++------+---------+------+
+
+Report Instance Areas: 
++------+--------------------+----------------------+------+
+|      |Instance            |Module                |Cells |
++------+--------------------+----------------------+------+
+|1     |top                 |                      |  7833|
+|2     |  rc5_segment       |rc5_segmentdriver     |    69|
+|3     |    uut1            |clock_divider         |    36|
+|4     |  rc5totalDesign    |top                   |  6297|
+|5     |    ALU_DataMem_MUX |mux__parameterized1   |    32|
+|6     |    BranchAdder     |adder                 |    37|
+|7     |    Oprand2Mux      |mux__parameterized1_0 |    15|
+|8     |    PC1             |PC                    |   390|
+|9     |    PCMUX1          |PCMUX                 |    30|
+|10    |    PCadder         |adder_1               |     9|
+|11    |    WrtRegMux       |mux                   |     4|
+|12    |    datamemo        |DataMemoryModule      |  2580|
+|13    |    instrmemory     |IM                    |    97|
+|14    |    registerfi      |registerfile          |  3103|
++------+--------------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:24 ; elapsed = 00:03:26 . Memory (MB): peak = 747.297 ; gain = 501.770
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 101 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:03:06 ; elapsed = 00:03:15 . Memory (MB): peak = 747.297 ; gain = 175.512
+Synthesis Optimization Complete : Time (s): cpu = 00:03:24 ; elapsed = 00:03:26 . Memory (MB): peak = 747.297 ; gain = 501.770
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 452 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 252 instances were transformed.
+  LDC => LDCE: 192 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 50 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 10 instances
+
+154 Infos, 171 Warnings, 54 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:03:28 ; elapsed = 00:03:32 . Memory (MB): peak = 747.297 ; gain = 509.535
+INFO: [Common 17-1381] The checkpoint 'C:/Users/l/Desktop/6463ADVHDes/code/project_12/project_12.runs/synth_2/topdesign.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.104 . Memory (MB): peak = 747.297 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 16 11:16:23 2017...

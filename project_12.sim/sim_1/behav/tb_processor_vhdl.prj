@@ -12,7 +12,7 @@ vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/new/mux.vhd"
 vhdl work  "../../../project_12.srcs/sources_1/imports/new/registerfile.vhd"
 vhdl xil_defaultlib  "../../../project_12.srcs/sources_1/new/signextend.vhd"
 vhdl work  "../../../project_12.srcs/sources_1/imports/new/top.vhd"
-vhdl work  "../../../project_12.srcs/sim_1/new/tb_processor.vhd"
+vhdl work  "../../../project_12.srcs/sources_1/new/tb_t.vhd"
 
 # Do not sort compile order
 nosort
