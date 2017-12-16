@@ -59,7 +59,7 @@ SIGNAL reg,memdata:  mem_array;
 signal ukey : std_logic_vector(127 downto 0);
 signal AB: std_logic_vector(63 downto 0);
 signal changeAddress, changeInstruction: std_logic_vector(31 downto 0);
-CONSTANT   ClkPeriod	: Time:= 20 ns;
+CONSTANT   ClkPeriod	: Time:= 10 ns;
 
 
 begin
@@ -78,34 +78,36 @@ end process;
 tb : PROCESS
 BEGIN
  -- encryption decryption keyexpansion when ukey = 0 AB = 0 end Behavioral; 
---  ukey <= x"915f4619be41b2516355a50110a9ce91";
+  ukey <= x"01060106090909000102070207030508";
 --ukey <= x"783348e75aeb0f2fd7b169bb8dc16787";
 --ukey <= x"dc49db1375a5584f6485b413b5f12baf";
-ukey <= x"5269f149d41ba0152497574d7f153125";
+--ukey <= x"5269f149d41ba0152497574d7f153125";
 --  AB <= x"0000000000000000";
   enc <= '0';
   dec <= '0';
 --  ukey <= x"00000000000000000000000000000000";
-  AB <= x"0000000000000000";
+--  AB <= x"0000000000000000";
   key_in <= '1';
    wait for 100 ns;
   key_in <= '0';
   wait for 200 us;
 --  AB <= x"0000000000000000";
-  AB <= x"eedba5216d8f4b15";
+  AB <= x"0108050805020202";
+  wait for 30ns;
   enc <= '1';
   wait for 100 ns;
   enc <= '0';
-  wait for 30030ns;
-  AB <= x"ac13c0f752892b5b";
-  wait for 170 us;
+--  wait for 30030ns;
+--  AB <= x"ac13c0f752892b5b";
+  wait for 200 us;
 --  AB <= x"eedba5216d8f4b15";
-  AB <= x"ac13c0f752892b5b";
+  AB <= x"0108050805020202";
+  wait for 30ns;
   dec <= '1';
   wait for 100 ns;
   dec <= '0';
-  wait for 30030ns;
-   AB <= x"eedba5216d8f4b15";
+--  wait for 30030ns;
+--   AB <= x"eedba5216d8f4b15";
   wait for 200 us;
 ---- encryption decryption keyexpansion when ukey = 1 AB = 1 
 --  ukey <= x"00000000000000000000000000000001";
